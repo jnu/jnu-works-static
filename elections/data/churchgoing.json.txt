@@ -1,0 +1,226 @@
+{
+    "AL": {
+        "label": "Church",
+        "vote": -1
+    },
+    "AK": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "AS": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "AZ": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "AR": {
+        "label": "Church",
+        "vote": -1
+    },
+    "CA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "CO": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "CT": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "DE": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "FL": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "GA": {
+        "label": "Church",
+        "vote": -1
+    },
+    "GU": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "HI": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "ID": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "IL": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "IN": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "IA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "KS": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "KY": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "LA": {
+        "label": "Church",
+        "vote": -1
+    },
+    "ME": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MP": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MD": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MI": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MN": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MS": {
+        "label": "Church",
+        "vote": -1
+    },
+    "MO": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "MT": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NE": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NV": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NH": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NJ": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NM": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NY": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "NC": {
+        "label": "Church",
+        "vote": -1
+    },
+    "ND": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "OH": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "OK": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "OR": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "PA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "PR": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "RI": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "SC": {
+        "label": "Church",
+        "vote": -1
+    },
+    "SD": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "TN": {
+        "label": "Church",
+        "vote": -1
+    },
+    "TX": {
+        "label": "Church",
+        "vote": -1
+    },
+    "UT": {
+        "label": "Church",
+        "vote": -1
+    },
+    "VT": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "VI": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "VA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "WA": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "DC": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "WV": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "WI": {
+        "label": "Not Church",
+        "vote": 1
+    },
+    "WY": {
+        "label": "Not Church",
+        "vote": 1
+    }
+}

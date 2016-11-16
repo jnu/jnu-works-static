@@ -1,0 +1,156 @@
+As part of my blog redesign (still in progress, as you may notice) I decided to do away with non-vector-based images in posts, which meant it was finally time to replace some old graphs I did in Excel.
+
+Creating bar charts is simple using <a href="http://d3js.org/">d3</a>, but where I encountered an unanticipated difficulty was in replicating the trend lines I threw into the Excel charts.
+
+The problem is that vector graphics aren't designed to draw polynomials per se, but draw paths as Bézier curves. As evidenced by the nascence of my blog, I'm fairly new to visualization. While I've heard of, seen, and even used Bézier curves before, I have never been in a situation where I actually had to <em>create</em> one programmatically. In fact, I didn't really have a clear idea of how that was even done.
+
+I found <a href="http://www.jasondavies.com/animated-bezier/">this fantastic visualization</a> that explained much more elegantly than words could do how a Bézier curve is built. By staring at these animations for a while it occurred to me that it wasn't actually that difficult to translate a polynomial into a quadratic Bézier curve.
+
+Incidentally, as I was working on this I was at home in Vermont listening to our governor Peter Shumlin give his inaugural address, which focused in part on how poorly Vermont students perform on math tests. Well, here I am, a Vermonter doing math I learned in a Vermont high school. You might have to correct me.
+
+<h4><a name="realworldsolution">Part I --- Real-world solution</a></h4>
+
+This is the solution to the problem derived in the manner of a programmer. That is to say, I saw a way my problem should be dealt with, and I dealt with it without thinking so much about <em>why</em> this solution works mathematically. I implemented the solution, it worked, and that was that. In <a href="#proof">the next part</a> I'll deal with the logic behind it.
+
+I'll use as an example the trend line I drew for <a href="http://joenoodles.com/2012/10/the-obesity-arc/">my post on the body mass of Presidents</a>, which is a second-order polynomial (i.e., a parabola).
+
+The polynomial I was attempting to draw was
+
+$latex y = -0.013x^2 + .666x + 19.2 &bg=eeeeee$
+
+on the domain $latex [0, 43.0] &bg=eeeeee$.
+
+In order to create the Bézier curve it's necessary to define the start and end points of the parabola and the control point, which controls the arc of the curve. The start and end points, $latex (x_s, y_s) &bg=eeeeee$ and $latex (x_f, y_f) &bg=eeeeee$, are simply the points along the curve at the domain boundaries.
+
+$latex x_s = 0 &bg=eeeeee$
+$latex y_s = -.013x_s^2 + .666x_s + 19.2 = -.013(0)^2 + .666(0) + 19.2 = 19.2 &bg=eeeeee$
+
+$latex x_f = 43.0 &bg=eeeeee$
+$latex y_f = -.013x_f^2 + .666x_f + 19.2 = -.013(43.0)^2 + .666(43.0) + 19.2 = 23.8 &bg=eeeeee$
+
+The control point takes a little more calculation. The control point is the intersection of the tangent lines at the start points and end points, as you can see in this diagram.
+
+<!-- bezier curve tangents diagram -->
+<link rel="stylesheet" href="http://joenoodles.com/widgets/bezierexample/bezierexample.css" />
+<script type="text/javascript" src="http://joenoodles.com/widgets/scr/d3.v3.min.js"></script>
+<script type="text/javascript" src="http://joenoodles.com/widgets/bezierexample/bezierexample.js"></script>
+<div id="jn-widget-container-1"></div>
+<script type="text/javascript">
+var jn = jn || {};
+jn.thing = jn.create();
+</script>
+
+To calculate this intersection it's necessary to find the equation of the tangent lines.
+
+First, calculate the slopes of the tangent lines at the start and end points, $latex m_s &bg=eeeeee$ and $latex m_f &bg=eeeeee$, using the derivative.
+
+$latex y' = -.026x + .666 &bg=eeeeee$
+
+$latex m_s = -.026x_s + .666 = -.026(0) + .666 = .666 &bg=eeeeee$
+$latex m_f = -.026x_f + .666 = -.026(43.0) + .666 = -.452 &bg=eeeeee$
+
+Now it's possible to calculate the y-intercepts of the tangent lines at the start and end points, $latex b_s &bg=eeeeee$ and $latex b_f &bg=eeeeee$.
+
+$latex b_s = y_s - m_sx_s = (19.2) - (.666)(0) = 19.2 &bg=eeeeee$
+$latex b_f = y_f - m_fx_f = (23.8) - (-.452)(43.0) = 43.2 &bg=eeeeee$
+
+Which gives the equations for the two tangent lines:
+
+At the start point $latex y = .666x + 19.2 &bg=eeeeee$
+and at the end point $latex y = -.452x + 43.2 &bg=eeeeee$
+
+If the control point $latex (x_c, y_c) &bg=eeeeee$ is the intersection of these tangent lines, then it can be found like this:
+
+$latex m_sx_c + b_s = m_fx_c + b_f &bg=eeeeee$
+$latex m_sx_c - m_fx_c = b_f - b_s &bg=eeeeee$
+$latex (m_s - m_f)x_c = b_f - b_s &bg=eeeeee$
+$latex x_c = \frac{b_f - b_s}{m_s - m_f} &bg=eeeeee$
+
+Plugging in numbers reveals $latex x_c &bg=eeeeee$, which is then used in either of the equations for the tangent lines to find $latex y_c &bg=eeeeee$.
+
+$latex x_c = \frac{(43.2) - (19.2)}{(.666) - (-.452)} = 21.5 &bg=eeeeee$
+$latex y_c = .666(21.5) + 19.2 = -.452(21.5) + 43.2 = 33.5 &bg=eeeeee$
+
+Now the start point, end point, and control point are all known and the Bézier curve can be constructed.
+
+In terms of SVG's, the Bézier curve can be drawn with this syntax:
+
+<code><xmp><path d="M x(0) y(19.2) Q x(21.5) y(33.5) x(43.0) y(23.8)"></path></xmp></code>
+
+Note that I'm using the pseudo-HTML <code>x(n)</code> and <code>y(n)</code>, which are transformation functions that translate the points on your axes to actual pixel positions in the SVG. For an example of how this ends up looking, see the actual path pulled out of the chart in my president BMI post:
+
+<code><xmp><path d="M 19 195.0853694283425 Q 371 81.13725000843175 707 161.52201580879668"></path></xmp></code>
+
+So there. I <em>can</em> do high school math.
+
+<h4><a name='proof'>Part II --- Mathematical justification</a></h4>
+
+The begged question in <a href="#realworldsolution">Part I</a> is that the control point is the intersection of the tangent lines from the end points. I demonstrated how to derive this intersection without explaining why this intersection is relevant. The mathematical justification for this is actually pretty simple.
+
+Bézier curves are fundamentally nested linear interpolations, which you can see demonstrated in <a href="http://www.jasondavies.com/animated-bezier/">Jason Davies' animations</a>. The Bézier function for drawing a first-order polynomial (i.e., a straight line) is simply
+
+$latex B_1(t) = \frac{x_f - t}{x_f - x_s}P_s + \frac{t - x_s}{x_f - x_s}P_f $
+
+where $latex P_s$ is the point $latex (x_s, y_s)$ and $latex P_f$ is the point $latex (x_f, y_f)$. Note that every Bézier curve is only defined on the domain from the start point to the end point, i.e. for $latex t \in [x_s, x_f]$. Also note that the fractional portions of both terms yield complementary values in the range $latex [0, 1]$:
+
+$latex \forall t \in [x_s, x_f],  \frac{x_f - t}{x_f - x_s} + \frac{t - x_s}{x_f - x_s} = \frac{(x_f - t) + (t - x_s)}{x_f - x_s} = \frac{x_f - x_s}{x_f - x_s} = 1$
+
+You can see how this is just simple linear interpolation between two points.
+
+The Bézier curve for a second-order polynomial is drawn by tracing at each $latex t$ the line interpolated between points on the lines $latex \overline{P_sP_c}$ and $latex \overline{P_cP_f}$. (Note I'm using the subscripts I used in the previous part, where $latex P_c = (x_c, y_c)$. This is the so-called control point.) It should be clear that the second-order Bézier is just nested first-order Béziers. Thus, given the two lines
+
+$latex B_{1, \overline{P_sP_c}}(t) = \frac{x_c - t}{x_c - x_s}P_s + \frac{t - x_s}{x_c - x_s}P_c $
+
+$latex B_{1, \overline{P_cP_f}}(t) = \frac{x_f - t}{x_f - x_c}P_c + \frac{t - x_c}{x_f - x_c}P_f $
+
+the "nested" interpolant can be derived as
+
+$latex B_{2}(t) = B_{1, \overline{B_{1, \overline{P_sP_c}}(t)B_{1, \overline{P_cP_f}}(t)}}(t) $
+
+$latex = \alpha(t)B_{1, \overline{P_sP_c}}(t) + \alpha^c(t)B_{1, \overline{P_cP_f}}(t) $
+
+As in the first-order Bézier curves, interpolation requires that the two terms have complementary fractional multiplicands, which I've called $latex \alpha(t)$ and $latex \alpha^c(t)$. (Remember from the first-order description that these multiplicands are functions of $latex t$.) To calculate these simply requires calculating the x-coordinates of the start and end points of this line, $latex x_\sigma$ and $latex x_\phi $. This can be done by applying $latex B_{1, \overline{P_sP_c}}(t) $ and $latex B_{1, \overline{P_cP_f}}(t) $ to the <em>x</em>-axis at $latex t = x_s $ and $latex t = x_f $, respectively.
+
+$latex x_\sigma = \frac{x_c - x_s}{x_c - x_s}x_s + \frac{x_s - x_s}{x_c - x_s}x_c = (1)x_s + (0)x_c = x_s$
+
+$latex x_\phi = \frac{x_f - x_f}{x_f - x_c}x_c + \frac{x_f - x_c}{x_f - x_c}x_f = (0)x_c + (1)x_f = x_f $
+
+Thus,
+
+$latex \alpha(t) = \frac{x_\phi - t}{x_\phi - x_\sigma} = \frac{x_f - t}{x_f - x_s} $
+
+$latex \alpha^c(t) = \frac{t - x_\sigma}{x_\phi - x_\sigma} = \frac{t - x_s}{x_f - x_s} $
+
+and it holds that $latex \alpha(t) + \alpha^c(t) = 1 $.
+
+Now, substituting the first-order Bézier curves into the second-order equation:
+
+$latex B_{2}(t) = \frac{x_f - t}{x_f - x_s}B_{1, \overline{P_sP_c}}(t) + \frac{t - x_s}{x_f - x_s}B_{1, \overline{P_cP_f}}(t) $
+
+And, substituting the first-order Bézier equations,
+
+$latex B_{2}(t) = \alpha(t)(\frac{x_c - t}{x_c - x_s}P_s + \frac{t - x_s}{x_c - x_s}P_c) + \alpha^c(t)(\frac{x_f - t}{x_f - x_c}P_c + \frac{t - x_c}{x_f - x_c}P_f) $
+
+For the sake of simplicity let
+
+$latex \beta(t) = \frac{x_c - t}{x_c - x_s} $
+$latex \beta^c(t) = \frac{t - x_s}{x_c - x_s} $
+
+and 
+
+$latex \gamma(t) = \frac{x_f - t}{x_f - x_c} $
+$latex \gamma^c(t) = \frac{t - x_c}{x_f - x_c} $
+
+so that
+
+$latex B_{2}(t) = \alpha(t)[\beta(t)P_s + \beta^c(t)P_c] + \alpha^c(t)[\gamma(t)P_c + \gamma^c(t)P_f] $
+
+$latex = \alpha(t)\beta(t)P_s + \alpha(t)\beta^c(t)P_c + \alpha^c(t)\gamma(t)P_c + \alpha^c(t)\gamma^c(t)P_f $
+
+$latex = \alpha(t)\beta(t)P_s + P_c[\alpha(t)\beta^c(t) + \alpha^c(t)\gamma(t)] + \alpha^c(t)\gamma^c(t)P_f $
+
+Now that the second-order Bézier is derived, the problem is to define this Bézier quadratic such that it describes any normal second-order polynomial, $latex y = ax^2 + bx + c, x \in [x_s, x_f] $.
+
+First, by definition $latex P_s $ and $latex P_f $ are points along the curve at the lower and upper bounds of the domain: $latex P_s = (x_s, y_s) $ and $latex P_f = (x_f, y_f) $. These points, then, are constant, leaving only $latex P_c $ which may be altered.
+
+

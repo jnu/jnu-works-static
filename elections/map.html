@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>US Map</title>  
+</head>
+
+
+<body>
+
+
+
+<!-- Begin Map Widget -->
+    <link rel="stylesheet" type="text/css" href="http://joenoodles.com/widgets/style/elections2/jquery-ui-latest.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://joenoodles.com/widgets/style/qtip.css" />
+    <link rel="stylesheet" type="text/css" href="http://joenoodles.com/widgets/style/electionmap.css" />
+	<script type="text/javascript" src="http://joenoodles.com/widgets/scr/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://joenoodles.com/widgets/scr/jquery-ui-latest.min.js"></script>
+    <script type="text/javascript" src="http://joenoodles.com/widgets/scr/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="http://joenoodles.com/widgets/scr/raphael-min.js"></script>
+    <script type="text/javascript" src="http://joenoodles.com/widgets/elections/usmap.js"></script>
+	<script type="text/javascript" src="http://joenoodles.com/widgets/elections/mapinit.js"></script>
+	<div id="jn-widgetcontainer-1">
+        <div id="map"></div>
+        <div id="right">
+            <div id="loadbuttons">
+					<h3 location="http://joenoodles.com/widgets/elections/data/vampwere.json.txt">Vampires vs. Werewolves</h3>
+ 
+                        <div class="explanation"><p>
+    For whatever reason, Werewolves tend to be more popular in rural areas. Not popular enough, though: Vampires carry the day.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/macpc.json.txt">Mac vs. PC</h3>
+                        <div class="explanation"><p>
+	You may be incredulous as you look around you in the coffeeshop and calculate that everyone has a Mac except that one poor dork in the corner slapping his PC and muttering obscenities under his breath. But PCs still outnumber Macs more than 15 to 1.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/catdog.json.txt">Cats vs. Dogs</h3>
+                        <div class="explanation"><p>
+	If cats and dogs in the US were fighting (or just playing) to put one of their own in the White House, the cat candidate would be elected by a wide margin. Of course, this assumes a ruff-ly equal voter turn-out, and it's never wise to assume a thing about a cat.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/latke.json.txt">Latkes vs. Hamentashn</h3>
+                        <div class="explanation"><p>
+	Finally an issue that really matters, and half the country doesn't even care. Hamentashn are the pretty clear winner here.
+                        </p></div>
+ 
+                        <h3 location="http://joenoodles.com/widgets/elections/data/piecake.json.txt">Pie vs. Cake</h3>
+                        <div class="explanation"><p>
+	America elects cake in a landslide, or rather <a href="http://butter-believe-it.blogspot.com/2012/03/mudslide-cake.html">a delicious chocolately mudslide</a>. As a pie-lover I'm a little disappointed. But I suppose I can live with cake.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/pancakeswaffles.json.txt">Pancakes vs. Waffles</h3>
+                        <div class="explanation"><p>
+	Waffles defeat the stodgy Northerners and their pancakes. Vice-president, naturally, is Chicken.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/sqcirc.json.txt">Squares vs. Circles</h3>
+                        <div class="explanation"><p>
+	Notice how New England prefers squares to circles, yet pancakes to waffles.
+                        </p></div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/phtb.json.txt">Pizza Hut vs. Taco Bell</h3>
+                        <div class="explanation"><p>
+	Taco Bell would become our first Tex-Mexican president. But thankfully <a href="http://www.youtube.com/watch?v=EQ8ViYIeH04" title="Das Racist: The Great Uniter">we don't actually have to choose</a>.
+                       </p> </div>
+
+                        <h3 location="http://joenoodles.com/widgets/elections/data/goodevil.json.txt">Good vs. Evil</h3>
+                        <div class="explanation"><p>
+	Lastly, I thought it would be useful to resolve a fundamental philosophical feud, Good versus Evil. It turns out to be a very close race, but, as you might expect, Evil prevails. That does not bode well for tomorrow!
+                        </p></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="votes" class="ui-widget">
+                <div class="ui-widget-content">
+                    <div id="numbers">
+                        <div class="dem"></div>
+                        <div class="gop"></div>
+                    </div>
+                    <div id="labels">
+                        <div class="dem"></div>
+                        <div class="gop"></div>
+                    </div>
+                    <div id="colorline">
+                        <div class="dem"></div>
+                        <div class="gop"></div>
+                    </div>
+                </div>
+            </div> 	
+		</div>
+	</div>
+    <script type="text/javascript">init_widget();</script>
+<!-- End Map Widget -->
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,206 @@
+{
+    "AL": {
+        "label": "Conecuh Ridge Whiskey",
+        "vote": 1
+    },
+    "AR": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "DE": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "FL": {
+        "label": "Orange juice",
+        "vote": 1
+    },
+    "IN": {
+        "label": "Water",
+        "vote": 1
+    },
+    "KY": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "LA": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "ME": {
+        "label": "Moxie",
+        "vote": 1
+    },
+    "MD": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "MA": {
+        "label": "Cranberry juice",
+        "vote": 1
+    },
+    "MN": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "MS": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "NE": {
+        "label": "Milk, Kool-Aid",
+        "vote": -1
+    },
+    "NH": {
+        "label": "Apple cider",
+        "vote": 1
+    },
+    "NY": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "NC": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "ND": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "OH": {
+        "label": "Tomato juice",
+        "vote": 1
+    },
+    "OK": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "OR": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "PA": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "RI": {
+        "label": "Coffee milk",
+        "vote": 1
+    },
+    "SC": {
+        "label": "South Carolina-grown tea",
+        "vote": 1
+    },
+    "SD": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "TN": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "VT": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "VA": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "WI": {
+        "label": "Milk",
+        "vote": -1
+    },
+    "AK": {
+        "label": "None",
+        "vote": 1
+    },
+    "AZ": {
+        "label": "None",
+        "vote": 1
+    },
+    "CA": {
+        "label": "None",
+        "vote": 1
+    },
+    "CO": {
+        "label": "None",
+        "vote": 1
+    },
+    "GA": {
+        "label": "None",
+        "vote": 1
+    },
+    "HI": {
+        "label": "None",
+        "vote": 1
+    },
+    "IL": {
+        "label": "None",
+        "vote": 1
+    },
+    "ID": {
+        "label": "None",
+        "vote": 1
+    },
+    "IA": {
+        "label": "None",
+        "vote": 1
+    },
+    "KS": {
+        "label": "None",
+        "vote": 1
+    },
+    "MI": {
+        "label": "None",
+        "vote": 1
+    },
+    "MO": {
+        "label": "None",
+        "vote": 1
+    },
+    "MT": {
+        "label": "None",
+        "vote": 1
+    },
+    "NM": {
+        "label": "None",
+        "vote": 1
+    },
+    "NJ": {
+        "label": "None",
+        "vote": 1
+    },
+    "TX": {
+        "label": "None",
+        "vote": 1
+    },
+    "UT": {
+        "label": "None",
+        "vote": 1
+    },
+    "DC": {
+        "label": "None",
+        "vote": 1
+    },
+    "WY": {
+        "label": "None",
+        "vote": 1
+    },
+    "WV": {
+        "label": "None",
+        "vote": 1
+    },
+    "CT": {
+        "label": "None",
+        "vote": 1
+    },
+    "NV": {
+        "label": "None",
+        "vote": 1
+    },
+    "WA": {
+        "label": "None",
+        "vote": 1
+    }
+}

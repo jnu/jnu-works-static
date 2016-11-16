@@ -1,0 +1,226 @@
+{
+    "AK": {
+        "name": "Alaska",
+        "votes": 3
+    },
+    "AL": {
+        "name": "Alabama",
+        "votes": 9
+    },
+    "AR": {
+        "name": "Arkansas",
+        "votes": 6
+    },
+    "AS": {
+        "name": "American Samoa",
+        "votes": 0
+    },
+    "AZ": {
+        "name": "Arizona",
+        "votes": 11
+    },
+    "CA": {
+        "name": "California",
+        "votes": 55
+    },
+    "CO": {
+        "name": "Colorado",
+        "votes": 9
+    },
+    "CT": {
+        "name": "Connecticut",
+        "votes": 7
+    },
+    "DC": {
+        "name": "Washington, D.C.*",
+        "votes": 3
+    },
+    "DE": {
+        "name": "Delaware",
+        "votes": 3
+    },
+    "FL": {
+        "name": "Florida",
+        "votes": 29
+    },
+    "GA": {
+        "name": "Georgia",
+        "votes": 16
+    },
+    "GU": {
+        "name": "Guam",
+        "votes": 0
+    },
+    "HI": {
+        "name": "Hawaii",
+        "votes": 4
+    },
+    "IA": {
+        "name": "Iowa",
+        "votes": 6
+    },
+    "ID": {
+        "name": "Idaho",
+        "votes": 4
+    },
+    "IL": {
+        "name": "Illinois",
+        "votes": 20
+    },
+    "IN": {
+        "name": "Indiana",
+        "votes": 11
+    },
+    "KS": {
+        "name": "Kansas",
+        "votes": 6
+    },
+    "KY": {
+        "name": "Kentucky",
+        "votes": 8
+    },
+    "LA": {
+        "name": "Louisiana",
+        "votes": 8
+    },
+    "MA": {
+        "name": "Massachusetts",
+        "votes": 11
+    },
+    "MD": {
+        "name": "Maryland",
+        "votes": 10
+    },
+    "ME": {
+        "name": "Maine",
+        "votes": 4
+    },
+    "MI": {
+        "name": "Michigan",
+        "votes": 16
+    },
+    "MN": {
+        "name": "Minnesota",
+        "votes": 10
+    },
+    "MO": {
+        "name": "Missouri",
+        "votes": 10
+    },
+    "MP": {
+        "name": "Marshall Islands",
+        "votes": 0
+    },
+    "MS": {
+        "name": "Mississippi",
+        "votes": 6
+    },
+    "MT": {
+        "name": "Montana",
+        "votes": 3
+    },
+    "NC": {
+        "name": "North Carolina",
+        "votes": 15
+    },
+    "ND": {
+        "name": "North Dakota",
+        "votes": 3
+    },
+    "NE": {
+        "name": "Nebraska",
+        "votes": 5
+    },
+    "NH": {
+        "name": "New Hampshire",
+        "votes": 4
+    },
+    "NJ": {
+        "name": "New Jersey",
+        "votes": 14
+    },
+    "NM": {
+        "name": "New Mexico",
+        "votes": 5
+    },
+    "NV": {
+        "name": "Nevada",
+        "votes": 6
+    },
+    "NY": {
+        "name": "New York",
+        "votes": 29
+    },
+    "OH": {
+        "name": "Ohio",
+        "votes": 18
+    },
+    "OK": {
+        "name": "Oklahoma",
+        "votes": 7
+    },
+    "OR": {
+        "name": "Oregon",
+        "votes": 7
+    },
+    "PA": {
+        "name": "Pennsylvania",
+        "votes": 20
+    },
+    "PR": {
+        "name": "Puerto Rico",
+        "votes": 0
+    },
+    "RI": {
+        "name": "Rhode Island",
+        "votes": 4
+    },
+    "SC": {
+        "name": "South Carolina",
+        "votes": 9
+    },
+    "SD": {
+        "name": "South Dakota",
+        "votes": 3
+    },
+    "TN": {
+        "name": "Tennessee",
+        "votes": 11
+    },
+    "TX": {
+        "name": "Texas",
+        "votes": 38
+    },
+    "UT": {
+        "name": "Utah",
+        "votes": 6
+    },
+    "VA": {
+        "name": "Virginia",
+        "votes": 13
+    },
+    "VI": {
+        "name": "Virgin Islands",
+        "votes": 0
+    },
+    "VT": {
+        "name": "Vermont",
+        "votes": 3
+    },
+    "WA": {
+        "name": "Washington",
+        "votes": 12
+    },
+    "WI": {
+        "name": "Wisconsin",
+        "votes": 10
+    },
+    "WV": {
+        "name": "West Virginia",
+        "votes": 5
+    },
+    "WY": {
+        "name": "Wyoming",
+        "votes": 3
+    }
+}

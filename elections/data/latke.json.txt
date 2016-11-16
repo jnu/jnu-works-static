@@ -1,0 +1,207 @@
+{
+"meta": { "left":"Latkes", "right":"Hamentashn" },
+    "NY": {
+        "label": "Hamentashn",
+        "vote": -0.55154533844189
+    },
+    "MD": {
+        "label": "Hamentashn",
+        "vote": -0.598218086723834
+    },
+    "MA": {
+        "label": "Hamentashn",
+        "vote": -0.391678429790952
+    },
+    "NJ": {
+        "label": "Hamentashn",
+        "vote": -0.543923233578406
+    },
+    "DC": {
+        "label": "Hamentashn",
+        "vote": -0.414389101745424
+    },
+    "PA": {
+        "label": "Hamentashn",
+        "vote": -0.467151546637228
+    },
+    "IL": {
+        "label": "Hamentashn",
+        "vote": -0.328528857264489
+    },
+    "CA": {
+        "label": "Hamentashn",
+        "vote": -0.113878246062154
+    },
+    "FL": {
+        "label": "Hamentashn",
+        "vote": -0.37072513126153
+    },
+    "WA": {
+        "label": "Hamentashn",
+        "vote": -0.0473315530786795
+    },
+    "MI": {
+        "label": "Hamentashn",
+        "vote": -0.234773417888757
+    },
+    "VA": {
+        "label": "Hamentashn",
+        "vote": -0.143843716002081
+    },
+    "OH": {
+        "label": "Hamentashn",
+        "vote": -0.149323116219668
+    },
+    "GA": {
+        "label": "Hamentashn",
+        "vote": -0.229459344401873
+    },
+    "TX": {
+        "label": "Hamentashn",
+        "vote": -0.0996840760906098
+    },
+    "AK": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "AL": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "AR": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "AZ": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "CO": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "CT": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "DE": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "HI": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "IA": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "ID": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "IN": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "KS": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "KY": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "LA": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "ME": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "MN": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "MO": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "MS": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "MT": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "NC": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "ND": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "NE": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "NH": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "NM": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "NV": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "OK": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "OR": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "RI": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "SC": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "SD": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "TN": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "UT": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "VT": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "WI": {
+        "label": "Latke",
+        "vote": 1
+    },
+    "WV": {
+        "label": "Latke",
+        "vote": 100
+    },
+    "WY": {
+        "label": "Latke",
+        "vote": 100
+    }
+}

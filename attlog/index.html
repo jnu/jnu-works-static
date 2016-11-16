@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ATT/Data Log Viewer</title>
+
+<script src="/js/libs/xloader.js"></script>
+<script type="text/javascript">
+loader.loadFiles([
+"/js/libs/analyticstracking.js",
+"//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css",
+"/sandbox/style/jnbs.css",
+"/sandbox/style/dc.css",
+"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+"/sandbox/stickto/jquery.stickto.js",
+"//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js",
+"/sandbox/js/d3.v3.min.js",
+"/sandbox/js/crossfilter.min.js",
+"/sandbox/js/dc.min.js",
+"attlogview.js"
+],
+{
+async:false,
+callback: function() {
+    // Init / startup junk
+
+    // Tooltips
+    $('#tpdInfo').tooltip();
+
+    // Make charts!
+    jn.ATTLogView({
+        // Setup options
+        dataSource : "joetexts.json",
+        views : {
+            month : {
+                width: 450,
+                height: 300,
+            },
+            location : {
+                width: 450,
+                height: 300,
+            },
+            day : {
+                width: 200,
+                height: 200,
+            },
+            daytime : {
+                width: 700,
+                height: 200,
+            }
+        },
+    });
+
+
+
+    // Sticky elements
+    $('#charts').height(1000); // make sure charts actual contains everything
+    $('#stickhead').width($('#charts').width())
+        .stickTo({
+            target: '#charts',
+            align: 'center',
+            margin: '0',
+        });
+
+    // hide modal
+    $('#loadscr').fadeOut('fast');
+
+    }
+});
+</script>
+
+<style type="text/css">
+#loadscr { position: absolute; width: 100%; height: 100%; text-align:center; z-index: 999;}
+#loadmode {
+    border: 0;
+    padding: 0;
+    opacity: 1;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+#loadtext {
+    top:45%;
+    width: 20%;
+    position: fixed;
+    font-size: 2em;
+    color: #999;
+    border-radius: 5px;
+    background-color: #333;
+    left: 40%;
+}
+.rowspace { margin-bottom: 50px; }
+#stickhead {
+    background-color: inherit;
+    text-align: center;
+    border-bottom: thin solid #333;
+}
+#charts { padding-top: 200px; }
+</style>
+
+</head>
+
+
+
+<body>
+<div id="loadscr">
+<div id="loadmode"></div>
+<div id="loadtext"></div>
+</div>
+
+
+<div id="stickhead">
+
+    <div id="io" class="btn-group" data-toggle="buttons-radio">
+        <button type="button"
+                class="btn btn-primary btn-small active"
+                data-filter>
+            All
+        </button>
+        <button type="button"
+                class="btn btn-primary btn-small"
+                data-filter="In">
+            In-bound
+        </button>
+        <button type="button"
+                class="btn btn-primary btn-small"
+                id="txtOut"
+                data-filter="Out">
+            Out-going
+        </button>
+    </div>
+
+
+    <!-- Data count -->
+    <div id="counter" class="text-center" style="margin-top:10px; float:none;">
+        <span class="filter-count text-success"
+              id="current-texts"></span> selected out of 
+        <span class="total-count text-info"></span> total texts.
+    </div>
+
+    <!-- Statistics -->
+    <div id="stats" style="float:none;">
+        <p>Texting rate:
+            <span class="text-info" id="text-rate"></span>
+            <span id ="tpdInfo" class='muted'
+               title="The day range is calculated from the first day for which there is data to the last, given the current filters. For example this makes my texting rate with a mysterious Washingtonian abnormally high, since there was a burst of 19 texts in a single day and that was the beginning and end of the correspondence.">
+               texts per day.
+            </a>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+
+<!-- Text stuff -->
+<div class="page-header">
+    <h1>Joe's Texting Trends</h1>
+    <a href="//joenoodles.com/">home</a>
+</div>
+
+<p>
+After reading about a <a href="http://www.cbc.ca/news/canada/manitoba/story/2013/04/11/mb-texting-shallow-morality-research-university-winnipeg.html">recent study showing a correlation between texting frequency and ethics</a> I dissected my AT&amp;T account history to make sure I'm not one of these shallow, egotistical, young adults. Notwithstanding my evident concern with this study, it turns out I am well below the threshold for vanity: I only text on average <a href="javascript:$('#txtOut').click();">8.64 times per day</a>.
+</p>
+
+<p>
+All of the charts below can be filtered interactively to answer specific questions. For example, you can <a href="javascript:filter('timeOfDayChart', [2, 4]);">filter the time-of-day chart to the range 2AM - 4AM</a> to find out what days I don't sleep much on. As you might expect, this is more often than not Friday night / Saturday morning and Saturday night / Sunday morning.
+</p>
+
+<p>
+I built the report with <a href="http://square.github.io/crossfilter/">crossfilter</a> and <a href="http://d3js.org/">d3</a> via Nick Zhu's <a href="http://nickqizhu.github.io/dc.js/">dc.js</a>. I'm also obviously using <a href="http://twitter.github.io/bootstrap/index.html">Bootstrap</a>, which I point out because I'm nevertheless still using <a href="/sandbox/stickto/">my own scroll-spying plugin</a> over <a href="http://twitter.github.io/bootstrap/javascript.html#scrollspy">Bootstrap#scrollspy</a>, partly out of arrogance, partly because I honestly like it better. Lastly, I used <a href="https://github.com/jnu/attlog">a little bit of Python</a> to parse my AT&amp;T account details, the CSV's of which are available somewhere in their woefully designed online account manager. I scrubbed the actual numbers out of the records (keeping only the area codes) so you can't stalk my friends. (Sorry.)
+</p>
+
+<p>
+I can pretty easily expand this page into a service where you can upload your own account history and see the details. I can make it compatible with Verizon, T-Mobile, and other providers as well. If there's any interest, tweet me <a href="https://twitter.com/joenudell">@joenudell</a>.
+</p>
+
+
+<!--
+    class="modal hide fade"
+     tabindex="-1"
+     role="dialog"
+     
+ -->
+<div id="loadMoad" role="dialog" tabindex="-1"
+     class="modal hide fade" aria-labelledby="loadMoad" aria-hidden="true">
+    <div class="modal-body text-center">
+        <h2><span class="text-warning text-center">Fetching data ...</span></h2>
+    </div>
+</div>
+
+
+
+<div class="row text-center">
+    <h3>Filter texts</h3>
+</div>
+
+
+
+
+
+
+
+<div id="charts">
+
+    <div class="row span12 rowspace">
+
+        <!-- Chart for months -->
+        <div id="monthChart" class="chart-target"
+             data-type="barChart"
+             data-group="month" 
+             data-dimension="month">
+            <strong>By Month</strong>
+
+            <a class="reset" href style="display: none;">reset</a>
+            <span class="reset" style="display:none;">
+                Filtered: <span class="filter"></span>
+            </span>
+
+            <div class="clearfix"></div>
+        </div>
+
+
+        <!-- Map locations -->
+        <div id="locationChart" class="chart-target"
+             data-type="geoChoroplethChart"
+             data-group="location"
+             data-dimension="location">
+             <strong>By Location</strong>
+
+             <a class="reset" href style="display: none;">reset</a>
+             <span class="reset" style="display:none;">
+                Filtered: <span class="filter"></span>
+            </span>
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+
+    </div>
+    <div class="row span12 rowspace">
+
+
+
+        <!-- Day of the Week -->
+        <div id="dayOfWeekChart" class="chart-target"
+             data-type="pieChart"
+             data-group="day"
+             data-dimension="day">
+             <strong>By Day</strong>
+
+             <a class="reset" href style="display: none;">reset</a>
+             <span class="reset" style="display: none;">
+                Filtered: <span class="filter"></span>
+            </span>
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+        <!-- Time of Day -->
+        <div id="timeOfDayChart" class="chart-target"
+             data-type="lineChart"
+             data-group="daytime"
+             data-dimension="daytime">
+            <strong>By Time of Day</strong>
+
+            <a class="reset" href style="display: none;">reset</a>
+            <span class="reset" style="display: none;">
+                Filtered: <span class="filter"></span>
+            </span>
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="row span12">
+
+    <!-- Data Table Container -->
+    <table id="dataTable" class="table table-striped">
+        <thead>
+            <tr class="header">
+                <th>Date</th>
+                <th>Time</th>
+                <th>In/Out</th>
+                <th>Area Code</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+    </table>
+
+    </div>
+</div> <!-- end of #charts -->
+
+
+
+</div> <!-- End of .container -->
+</body>
+</html>
