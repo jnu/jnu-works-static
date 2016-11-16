@@ -1,0 +1,273 @@
+/*
+Specific blog styles. General theming is done with bootstrap;
+see /styles/bootstrap.css
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Rufina&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,400italic);
+
+body{
+    margin: 0;
+    background-image: url(bg.png);
+}
+
+img#wpstats{ display: none;}
+
+.page-header img{cursor: pointer;}
+
+.foot-img{
+    bottom: 0;
+}
+
+#main {
+    margin: 20px 20px 0 20px;
+}
+
+.container-fluid{
+    background-color:#fcfbf5;
+    -moz-box-shadow: 0px 1px 3px 2px #333;
+    -webkit-box-shadow: 0px 1px 3px 2px #333;
+    box-shadow: 0px 1px 3px 2px #333;
+    border-radius: 40px;
+}
+
+#footer-cont {
+    overflow: hidden;
+}
+
+.footer{
+    padding-top: 80px;
+    position: relative;
+    left: -5%;
+    width: 110%;
+    /* gradient */
+    background: -moz-linear-gradient(top,  rgba(255,246,218,0) 0%, rgba(255,246,218,0.8) 70%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,246,218,0)), color-stop(70%,rgba(255,246,218,0.8))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,246,218,0) 0%,rgba(255,246,218,0.8) 70%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,246,218,0) 0%,rgba(255,246,218,0.8) 70%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,246,218,0) 0%,rgba(255,246,218,0.8) 70%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,246,218,0) 0%,rgba(255,246,218,0.8) 70%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fff6da', endColorstr='#ccfff6da',GradientType=0 ); /* IE6-9 */
+}
+
+.head-space{margin:30px 0;}
+
+div.numeral {
+    display: inline-block;
+    width: 60px;
+    vertical-align: top;
+    position: relative;
+}
+
+div.title {
+    display: inline-block;
+    width: 440px;
+    word-spacing: .1em;
+}
+
+div.indexline {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    vertical-align: top;
+    word-spacing: 0em;
+}
+
+div.index {
+    display: inline;
+}
+    
+
+div.h3 {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+div.h4 {
+    left: 30px;
+    position: relative;
+}
+
+div.h5 {
+    left: 60px;
+    position: relative;
+}
+
+div.site-info {
+    font-size: 12px;
+    color: #333;
+}
+div.site-info a {
+    color: #900;
+}
+
+
+span.value, p.value {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+@media (max-width: 979px) {
+    span.value, p.value {
+        font-size: 1.1em;
+    }
+    #sidebar .tab-content {
+        margin: 0 2%;
+    }
+    .foot-img {
+        display: none;
+    }
+    body {
+        padding: 0;
+    }
+}
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+    }
+}
+
+#page-cont {
+    overflow-x: hidden;
+}
+
+
+div.footnote {
+    font-size:.7em;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+code {
+    line-height: 1.5em;
+}
+
+/* useful one-offs to avoid inline css */
+.cleared {
+    clear: both;
+}
+
+.indent0{ margin-left: 0; }
+.indent1{ margin-left: 10%; }
+.indent2{ margin-left: 20%; }
+.indent3{ margin-left: 30%; }
+.indent4{ margin-left: 40%; }
+.indent5{ margin-left: 50%; }
+
+li.module {
+    padding-right: 1%;
+}
+
+/* Social sprite */
+.social {
+    display: inline-block;
+    background-image: url('socialsprite.png');
+    width: 20px;
+    height: 20px;
+}
+.reddit { background-position: 0px 0px; }
+.reddit:hover { background-position: 0 -20px }
+.twitter { background-position: -20px 0; }
+.twitter:hover { background-position: -20px -20px; }
+.tumblr { background-position: -40px 0; }
+.tumblr:hover { background-position: -40px -20px; }
+.facebook { background-position: -60px 0; }
+.facebook:hover { background-position: -60px -20px; }
+.googleplus { background-position: -80px 0; }
+.googleplus:hover { background-position: -80px -20px; }
+
+
+/* --- Sprite cutting --- */
+.sprite {
+    display: inline-block;
+    background-image: url('sprite.png');
+}
+
+.sprite.flare.title {
+    width: 20px;
+    height: 10px;
+}
+
+.sprite.flare.title.left {
+    background-position: -80px -60px;
+}
+
+.sprite.flare.title.right {
+    background-position: -80px -70px;
+}
+
+.sprite.icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* -- Index number / icon sprites --- */
+.indecon {
+    position: absolute;
+}
+
+.indenum {
+    display: inline-block;
+    position: absolute;
+}
+
+/* -- Badge sprites-- */
+.ico {
+    width: 20px;
+    height: 20px;
+}
+
+.ico.html5 {
+    background-position: 0px -80px;
+}
+
+.ico.php {
+    background-position: -20px -80px;
+}
+
+.ico.python {
+    background-position: -40px -80px;
+}
+
+.ico.nodejs {
+    background-position: -80px -100px;
+}
+
+.ico.backbonejs {
+    background-position: -40px -100px;
+}
+
+.ico.couchdb {
+    background-position: -60px -100px;
+}
+
+pre { border: thin solid #aaa; }
+
+
+/* Admin bar --- */
+#admin-bar {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+
+/* File Icon Sprites ---  */
+
+.sprite.icon.file {
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+span.dlborder {
+    padding: 10px;
+    border: thin dashed #a00;
+}
+
+/* DB ICON */
+a[href$='.db'] .sprite.icon {
+    background-position: 0px -100px;
+}
