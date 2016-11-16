@@ -10,3 +10,6 @@
 [submodule "deathrow"]
 	path = deathrow
 	url = https://github.com/jnu/texecutions
+[submodule "php"]
+	path = php
+	url = https://github.com/jnu/jnu-works-php
