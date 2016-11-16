@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/js/underscore.min.js"></script>
+    <script type="text/javascript" src="/js/util.js"></script>
+    <script type="text/javascript" src="/js/rAF.js"></script>
+    <script type="text/javascript" src="/js/three.min.js"></script>
+    <script type="text/javascript" src="/js/physi.js"></script>
+    <script type="text/javascript" src="/js/three.classes.js"></script>
+    <script type="text/javascript" src="money.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var scene = new Scene('#scene')
+                .width(window.innerWidth)
+                .height(window.innerHeight);
+
+            $(window).resize(function() {
+                scene.width(window.innerWidth).height(window.innerHeight);
+            });
+
+            var ground = new Ground()
+                .move(0, -100, 0)
+                .addTo(scene);
+
+            var pennies = [];
+            window.scene = scene;
+
+            function spawn() {
+                var startX = 100 - Math.random() * 200;
+                var startY = 100;
+
+                var newPenny = new Penny()
+                    .move(startX, startY, 0)
+                    .rotate(Math.random() , Math.random() , Math.random())
+                    .addTo(scene);
+
+                pennies.push(newPenny);
+            }
+
+            setInterval(spawn, 1000);
+
+        });
+    </script>
+</head>
+<body>
+
+    <div id="scene"></div>
+
+</body>
+</html>

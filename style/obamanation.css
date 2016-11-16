@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+#jn-widgetcontainer {
+	position: relative;
+	width: 800px;
+}
+
+#jn-widgetcontainer>div {
+	width: 48%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#obamacont {
+	position: absolute;
+	left: 0;
+}
+
+#romneycont {
+	position: absolute;
+	right: 0;
+}

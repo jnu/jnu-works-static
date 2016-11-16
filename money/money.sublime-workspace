@@ -1,0 +1,658 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tbodyScr",
+				"tbodyScrollSpacerAfter"
+			],
+			[
+				"tbodyScro",
+				"tbodyScrollSpacerBefore"
+			],
+			[
+				"assertEventu",
+				"assertEventuallyHasClass"
+			],
+			[
+				"expe",
+				"expectedFilteredCells"
+			],
+			[
+				"assertEventual",
+				"assertEventuallyDoesNotHaveClass"
+			],
+			[
+				"init",
+				"initialContents"
+			],
+			[
+				"tbody",
+				"tbodyRowsSelector"
+			],
+			[
+				"last",
+				"lastRowCellsSelector"
+			],
+			[
+				"first",
+				"firstRowCellsSelector"
+			],
+			[
+				"high",
+				"highlights"
+			],
+			[
+				"filt",
+				"filteredAttribute"
+			],
+			[
+				"attr",
+				"attribute"
+			],
+			[
+				"NO_",
+				"NO_DIMENSIONS_OR_MEASURES"
+			],
+			[
+				"NO",
+				"NO_DIMENSIONS_OR_MEASURES_CODE"
+			],
+			[
+				"filtered",
+				"filteredAttributeID"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1632,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/joseph/Dropbox/Venture/Websites/static/js/util.js",
+			"settings":
+			{
+				"buffer_size": 434,
+				"line_ending": "Unix",
+				"name": "// underscore extensions"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/joseph/Dropbox/Venture/Websites/static/js/three.classes.js",
+			"settings":
+			{
+				"buffer_size": 17240,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "money.js",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 49.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 516.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/joseph/Dropbox/Venture/Websites/static/js/rAF.js",
+		"/Users/joseph/Dropbox/Venture/Websites/static/js/physijs_worker.js",
+		"/Users/joseph/Dropbox/Venture/Websites/static/js/ammo.js",
+		"/Users/joseph/Dropbox/Venture/Websites/static/js/physi.js",
+		"/Users/joseph/Dropbox/Venture/Websites/static/js/underscore.min.js",
+		"/Users/joseph/Dropbox/Venture/Websites/static/money/index.html",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/models/story.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/clearstory/vis-controls.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/views/stories/_story-visualization-templates.html.erb",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/application.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/bar/bar.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/table/table.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/table/styles.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/timeline/timeline.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/views/vis_layout.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/flexmap/flexmap.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/table/module.json",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/lib/d3.longtablescroll.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/timeline/module.json",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/factory.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/lib/d3.longscroll.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/splits.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/suites/story/vis_errors.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/bar/module.json",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/suites/story/table.js",
+		"/Users/joseph/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/core_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/table_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/highlights_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/flexmap_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/client_utils.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/app_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/run.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/data/test2_col_location-county.csv",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/data/test2.csv",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/helpers/barchart_helpers.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/suites/story/barchart.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/managers/highlights.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/managers/selection.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/models/data_table.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/managers/data_labels.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/notes/20130917-outline-from_nickr.txt",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/test/javascript/suites/story/query.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/models/query.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/models/selection.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/palette.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/models/attribute.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/vis/modules/scatter/scatter.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/managers/drilldowns.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/clearstory/bootstrap/bootstrap.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/clearstory/item-groups.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/util/util.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/clearstory/bootstrap/_tables.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/stylesheets/clearstory/welcome.css.sass",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/managers/engine.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/init.js",
+		"/Users/joseph/Dropbox/Work/clearstorydata/story-webapp/app/assets/javascripts/routers/story_router.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/config.js",
+		"/Users/joseph/Dropbox/Work/Web/optitheme-mainindex-edited.html",
+		"/Users/joseph/Dropbox/Work/Web/optitheme-functions-edit.php",
+		"/Users/joseph/Dropbox/Work/Web/optitheme-header-edit.html",
+		"/Users/joseph/Dropbox/Work/Web/optitheme-amblog.css",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/templates/home-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/templates/footer-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/ncaa/doc.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Page.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/templates/post-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/styles/blog.css",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/router.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Index.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/blogmachine.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/collections/Pages.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/main.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/blog.build.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/elections/mapinit.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/ncaa/fetchstats.py",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/ncaa/fetchbracket.py",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/js/raphael-dev/raphael.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/js/raphael-dev/raphael.build.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/js/raphael/raphael.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/stickto/index.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/static/synie/lastslice.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/utils.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/Blog.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/IndexLine.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/BlogView.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Home.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Header.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Footer.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/models/Page.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/views/Social.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/xloader.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/templates/main-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/templates/index-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/require.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/jQuery.scrollTo-1.4.6.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/backbone-1.0.0.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/underscore-1.4.4.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/js/libs/jQuery-2.0.2.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/mathjaxpost.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/testmathjax.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/.node/phantom-server.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/index.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/.node/web.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/.node:index.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/ss/multiget.php",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/obamanation/obamanation.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/synie/synie2.stable.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/synie/lastslice.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/synie/synie2.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/synie/synie.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/ss/synie.php",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/scratch/iesankey-prototype.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/blogmachine/sandbox/synie/synie2.widget.htm",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/index.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/js/blogmachine.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/js/blogmachine-min.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/js/loader.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/js/loader-min.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/js/mathjax-min.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/sandbox/bezierexample/bezierexample.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/sandbox/ncaa/bracket.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/sandbox/ncaa/bracket.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/styles/blog.css",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/sandbox/style/electionmap.css",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/sandbox/forcenetworkviz/networkviz.js",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/templates/main-tpl.html",
+		"/Users/joseph/Dropbox/Venture/sandbox/newblog/templates/index-tpl.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"delete",
+			"updateGeom",
+			"updateGeometry;",
+			"update",
+			"createMateri",
+			"update(",
+			"update('geo')",
+			"Geomet",
+			"addTo",
+			"animator",
+			"add",
+			"scene",
+			"state",
+			"events: {",
+			"ul.",
+			"measure",
+			"AddSplitAttrib",
+			"click",
+			"off",
+			"drag",
+			"remove",
+			"window.",
+			":hover",
+			"delete-",
+			":first-child",
+			".measure-splits",
+			"sort",
+			"ul",
+			"'li'",
+			"li.ac",
+			"events",
+			"AddSplitAttr",
+			"MeasureSlotAtt",
+			"\"li",
+			"'li'",
+			"li",
+			"li ",
+			"add-measure-split-view",
+			"measure-splits",
+			"window",
+			"setLegend",
+			"getCategoryAttrib",
+			"measureList",
+			"measureListAt",
+			"measureListAttribute",
+			"setLegend",
+			"'group'",
+			"categoryAttribute",
+			"attrFor",
+			"categoryAttribute",
+			"group",
+			"groupAttri",
+			"listenTo",
+			"XXX",
+			"renderVis",
+			"delay",
+			"AddSplitMeasureView",
+			"setLegend",
+			"attrs",
+			"legends",
+			"slot.legends",
+			"this.legends",
+			"legend ",
+			"measureListLegend",
+			"legend-block",
+			"rowHeight",
+			"size",
+			"tbody",
+			"}else{",
+			"scroll",
+			"renderVisible",
+			"longscrolltable",
+			".split-row",
+			"split-row",
+			"toggleError",
+			"split-row",
+			"outdatedRow",
+			"split-row",
+			"renderVisible",
+			"noData",
+			"$errorMsg",
+			"toggleError",
+			"clear()",
+			"errorTemp",
+			"toggleErr",
+			"change:error",
+			"on(\"change:error",
+			"on('change:error",
+			"change:error",
+			"error",
+			"ONE_POINT",
+			"NO_DATA",
+			"assertErrorState",
+			"$backdrop",
+			"modal-backdrop",
+			"track",
+			"trigger",
+			"while (++i < l)",
+			"case 0",
+			"track()",
+			"track.call",
+			"track()",
+			"tracking",
+			"scalebyx",
+			"testUtil.getText",
+			"client_utils",
+			"client_helpers",
+			"first",
+			"lastrow",
+			"browser",
+			"controls",
+			"update()",
+			"eventManager",
+			"update",
+			"call",
+			"vismodel",
+			"update",
+			"call",
+			"update",
+			"filteredAttrib",
+			"filteredAtt",
+			"clear",
+			"filteredattributeid",
+			"errorCodes",
+			"nodatasets",
+			"toggle",
+			"set",
+			"toggle"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"updateGeometry();",
+			"updateGeometry",
+			"longtablescroll",
+			"Blog.",
+			"$$:",
+			"$$,",
+			"$$.",
+			"$$ ",
+			"$$",
+			"$$<",
+			">$$",
+			"$$",
+			"",
+			"spriteMap",
+			",",
+			"Lato"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1024,
+								1024
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 164.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/joseph/Dropbox/Venture/Websites/static/js/util.js",
+					"settings":
+					{
+						"buffer_size": 434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
+							]
+						],
+						"settings":
+						{
+							"auto_name": "// underscore extensions",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/joseph/Dropbox/Venture/Websites/static/js/three.classes.js",
+					"settings":
+					{
+						"buffer_size": 17240,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17164,
+								17164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9989.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "money.js",
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								158,
+								158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 177.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"app/assets/javascripts/util/util.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 82.0,
+	"status_bar_visible": true
+}

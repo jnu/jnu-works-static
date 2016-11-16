@@ -1,0 +1,528 @@
+{
+    "name": "POTUS",
+    "children": [
+        {
+            "name": "Temperate",
+            "children": [
+                {
+                    "name": "Portly",
+                    "children": [
+                        {
+                            "name": "Tone Deaf",
+                            "children": [
+                                {
+                                    "name": "Clean-shaven",
+                                    "children": [
+                                        {
+                                            "name": "Gerald Ford",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Sideburned",
+                                    "children": [
+                                        {
+                                            "name": "James K. Polk",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Music Appreciator",
+                            "children": [
+                                {
+                                    "name": "Dweeb",
+                                    "children": [
+                                        {
+                                            "name": "Herbert Hoover",
+                                            "size": 141220775
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Jock",
+                                    "children": [
+                                        {
+                                            "name": "Dwight D. Eisenhower",
+                                            "size": 141220776
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Corpulent",
+                    "children": [
+                        {
+                            "name": "Clean-shaven",
+                            "children": [
+                                {
+                                    "name": "William McKinley",
+                                    "size": 141220800
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Mustachioed",
+                            "children": [
+                                {
+                                    "name": "Theodore Roosevelt",
+                                    "size": 141220800
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Fit",
+                    "children": [
+                        {
+                            "name": "Philanderer",
+                            "children": [
+                                {
+                                    "name": "Musician",
+                                    "children": [
+                                        {
+                                            "name": "Woodrow Wilson",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Music Appreciator",
+                                    "children": [
+                                        {
+                                            "name": "Ronald Reagan",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Prude",
+                            "children": [
+                                {
+                                    "name": "Clean-shaven",
+                                    "children": [
+                                        {
+                                            "name": "Andrew Johnson",
+                                            "size": 141220752
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Bearded",
+                                    "children": [
+                                        {
+                                            "name": "Abraham Lincoln",
+                                            "size": 141220752
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Casual Drinker",
+            "children": [
+                {
+                    "name": "Tone Deaf",
+                    "children": [
+                        {
+                            "name": "Portly",
+                            "children": [
+                                {
+                                    "name": "Philanderer",
+                                    "children": [
+                                        {
+                                            "name": "Lyndon B. Johnson",
+                                            "size": 141220776
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Prude",
+                                    "children": [
+                                        {
+                                            "name": "James Monroe",
+                                            "size": 141220776
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Fit",
+                            "children": [
+                                {
+                                    "name": "Clean-shaven",
+                                    "children": [
+                                        {
+                                            "name": "John F. Kennedy",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Bearded",
+                                    "children": [
+                                        {
+                                            "name": "James A. Garfield",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Musician",
+                    "children": [
+                        {
+                            "name": "Libertine",
+                            "children": [
+                                {
+                                    "name": "Portly",
+                                    "children": [
+                                        {
+                                            "name": "John Quincy Adams",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Fit",
+                                    "children": [
+                                        {
+                                            "name": "Thomas Jefferson",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Philanderer",
+                            "children": [
+                                {
+                                    "name": "Portly",
+                                    "children": [
+                                        {
+                                            "name": "Bill Clinton",
+                                            "size": 141220776
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Fit",
+                                    "children": [
+                                        {
+                                            "name": "Warren G. Harding",
+                                            "size": 141220776
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Prude",
+                            "children": [
+                                {
+                                    "name": "Portly",
+                                    "children": [
+                                        {
+                                            "name": "Harry S. Truman",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Fit",
+                                    "children": [
+                                        {
+                                            "name": "John Tyler",
+                                            "size": 141220800
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Music Appreciator",
+                    "children": [
+                        {
+                            "name": "Portly",
+                            "children": [
+                                {
+                                    "name": "George Washington",
+                                    "size": 141220632
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Scrawny",
+                            "children": [
+                                {
+                                    "name": "James Madison",
+                                    "size": 141220632
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Fit",
+                            "children": [
+                                {
+                                    "name": "Libertine",
+                                    "children": [
+                                        {
+                                            "name": "George H. W. Bush",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Philanderer",
+                                    "children": [
+                                        {
+                                            "name": "Franklin D. Roosevelt",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Prude",
+                                    "children": [
+                                        {
+                                            "name": "Clean-shaven",
+                                            "children": [
+                                                {
+                                                    "name": "Barack Obama",
+                                                    "size": 141220800
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Bearded",
+                                            "children": [
+                                                {
+                                                    "name": "Benjamin Harrison",
+                                                    "size": 141220800
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Teetotaler",
+            "children": [
+                {
+                    "name": "Portly",
+                    "children": [
+                        {
+                            "name": "Clean-shaven",
+                            "children": [
+                                {
+                                    "name": "George W. Bush",
+                                    "size": 141220728
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Bearded",
+                            "children": [
+                                {
+                                    "name": "Rutherford B. Hayes",
+                                    "size": 141220728
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Corpulent",
+                    "children": [
+                        {
+                            "name": "Zachary Taylor",
+                            "size": 141220728
+                        }
+                    ]
+                },
+                {
+                    "name": "Fit",
+                    "children": [
+                        {
+                            "name": "Philanderer",
+                            "children": [
+                                {
+                                    "name": "William Henry Harrison",
+                                    "size": 141722016
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Prude",
+                            "children": [
+                                {
+                                    "name": "Musician",
+                                    "children": [
+                                        {
+                                            "name": "Millard Fillmore",
+                                            "size": 141722016
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Music Appreciator",
+                                    "children": [
+                                        {
+                                            "name": "Hippie",
+                                            "children": [
+                                                {
+                                                    "name": "Jimmy Carter",
+                                                    "size": 141722018
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Square",
+                                            "children": [
+                                                {
+                                                    "name": "Calvin Coolidge",
+                                                    "size": 141722017
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Alcoholic",
+            "children": [
+                {
+                    "name": "Clean-shaven",
+                    "children": [
+                        {
+                            "name": "Tone Deaf",
+                            "children": [
+                                {
+                                    "name": "Philanderer",
+                                    "children": [
+                                        {
+                                            "name": "Andrew Jackson",
+                                            "size": 141220728
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Prude",
+                                    "children": [
+                                        {
+                                            "name": "Not Remarkably Handsome",
+                                            "children": [
+                                                {
+                                                    "name": "John Adams",
+                                                    "size": 141220728
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Remarkably Handsome",
+                                            "children": [
+                                                {
+                                                    "name": "Franklin Pierce",
+                                                    "size": 14
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Musician",
+                            "children": [
+                                {
+                                    "name": "Richard Nixon",
+                                    "size": 141220728
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Music Appreciator",
+                            "children": [
+                                {
+                                    "name": "James Buchanan",
+                                    "size": 141220728
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Bearded",
+                    "children": [
+                        {
+                            "name": "Ulysses S. Grant",
+                            "size": 141220800
+                        }
+                    ]
+                },
+                {
+                    "name": "Sideburned",
+                    "children": [
+                        {
+                            "name": "Martin Van Buren",
+                            "size": 141220800
+                        }
+                    ]
+                },
+                {
+                    "name": "Mustachioed",
+                    "children": [
+                        {
+                            "name": "Portly",
+                            "children": [
+                                {
+                                    "name": "Chester A. Arthur",
+                                    "size": 141220656
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Corpulent",
+                            "children": [
+                                {
+                                    "name": "Grover Cleveland",
+                                    "size": 141220656
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

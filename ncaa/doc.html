@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="/js/libs/xloader.js"></script>
+<script type="text/javascript">
+loader.loadFiles([
+    "/styles/bootstrap.css",
+    "/styles/blog.css",
+    "/sandbox/ncaa/doc.css",
+    "/js/libs/analyticstracking.js",
+    "//code.jquery.com/jquery-2.0.1.min.js",
+    "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js",
+    "/sandbox/stickto/jquery.stickto.js",
+    "/sandbox/ncaa/doc.js"
+],
+{
+    async: false,
+    callback: function() { populate_helper('#menubar'); }
+});
+</script>
+
+</head>
+
+
+<body>
+
+<div class="container-fluid" id="main">
+    <div id="page-cont">
+        <div class="row-fluid">
+            <div class="span8 offset2">
+
+
+<h3>Notes</h3>
+
+<h4>Updates</h4>
+
+<p>March 18, 2013. Added documentation for <a href="#eval">ncaalib.eval</a> and <a href="#datadoc">ncaalib.data</a> modules.</p>
+
+<p>March 13, 2013. Added documentation for <a href="#gamedecider">GameDecider</a> as well as updated documentation for <a href="#squad">Squad</a>.</p>
+
+
+<div id="docs">
+<h3><a name="ncaalib">ncaalib.ncaa</a></h3>
+<h4><a name="objectmodel">Object Model Documentation for ncaa.db</a></h4>
+
+<p>The object model for <a href="http://joenoodles.com/data/ncaa.db">ncaa.db</a> is the module <a href="https://github.com/jnu/ncaa/blob/master/ncaalib/ncaa.py">ncaalib.ncaa</a>, found in <a href="https://github.com/jnu/ncaa">the master git repository</a> for my project.</p>
+
+
+<div id="classdoc">
+<ul>
+
+
+
+<li>
+<span class='doc class'><a name="derivedstats">DerivedStats</a></span>
+<p class='doc string'>Holds statistics that are derived ultimately from <a href="#playerstatsheet">PlayerStatSheets</a>. DerivedStats is an abstract base class; in practice, stats are stored as either of the polymorphic <a href="#squadderivedstats">SquadDerivedStats</a> and <a href="#squadmemberderivedstats">SquadMemberDerivedStats</a>.
+
+<p>The DerivedStats are meant to be thought of as "cached" stats and non-permanent. The database when you download it does contain any derived statistics; they are derived on an ad-hoc basis.</p>
+
+<p>It can obviously take a long time to calculate all of the derived statistics that are useful in analysis, so it is necessary in practice to store derived statistics when working on a project. Still, it's theoretically undesirable to store such statistics, most importantly because the derived stats change when new data are entered. As such, I've compromised by giving derived stats their own table that can be nuked very easily and without consequence. I've also written methods into <a href="#squad">Squad</a> and <a href="#squadmember">SquadMember</a> for deriving stats from their primitives and updating the cache. See the documentation for the respective classes for more information.</p>
+</p>
+
+<h4>Attributes</h4>
+
+<p><em>Note: derived stats use as a basis the number of games the relevant subject played in a season</em></p>
+
+<ul>
+<li><strong>games_played</strong> - sum of games played</li>
+<li><strong>minutes_played</strong> - sum of minutes played</li>
+<li><strong>field_goals_made</strong> - sum of field goals made</li>
+<li><strong>field_goals_attempted</strong> - sum of field goals attempted</li>
+<li><strong>threes_made</strong> - sum of three-pointers made</li>
+<li><strong>threes_attempted</strong> - sum of three-pointers attempted</li>
+<li><strong>free_throws_made</strong> - sum of free throws made</li>
+<li><strong>free_throws_attempted</strong> - sum of free throws attempted</li>
+<li><strong>points</strong> - sum of points</li>
+<li><strong>offensive_rebounds</strong> - sum of offensive rebounds</li>
+<li><strong>defensive_rebounds</strong> - sum of defensive rebounds</li>
+<li><strong>rebounds</strong> - sum of rebounds</li>
+<li><strong>assists</strong> - sum of assists</li>
+<li><strong>turnovers</strong> - sum of turnovers</li>
+<li><strong>steals</strong> - sum of steals</li>
+<li><strong>blocks</strong> - sum of blocks</li>
+<li><strong>fouls</strong> - sum of personal fouls</li>
+<li><strong>fg_pct</strong> - field goal shooting percentage</li>
+<li><strong>threes_pct</strong> - three-point shooting percentage</li>
+<li><strong>ft_pct</strong> - free throw shooting percentage</li>
+<li><strong>ppm</strong> - points-per-minute-played</li>
+<li><strong>lpm</strong> - looks-per-minute-played (i.e., shots taken per minute)</li>
+<li><strong>field_goal_avg</strong> - average field goals made per game</li>
+<li><strong>looks_avg</strong> - average shots taken per game</li>
+<li><strong>threes_avg</strong> - average threes made per game</li>
+<li><strong>points_avg</strong> - average points per game</li>
+<li><strong>rebounds_avg</strong> - average rebounds per game</li>
+<li><strong>steals_avg</strong> - average steals per game</li>
+<li><strong>assists_avg</strong> - average assists per game</li>
+<li><strong>blocks_avg</strong> - average blocks per game</li>
+<li><strong>turnovers_avg</strong> - average turnovers per game</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(<em>stats</em>)</strong> - A dictionary of statistics describing how to initialize the instance. Uses attribute names as keys.</li>
+<li><strong>items()</strong> - Return stats as a list of (key, value) tuples</li>
+</ul>
+
+<h4>Implements</h4>
+<ul>
+<li><strong>__getitem__(), __setitem__()</strong> - Class is subscriptable (uses attribute names as subscripts).</li>
+</ul>
+
+</li>
+
+
+
+
+
+
+<li>
+<span class='doc class'><a name="game">Game</a></span>
+<p class='doc string'>Store data about a matchup between two teams. Could be real or hypothetical. Maps <a href="#squad">Squads</a> in multiple ways (on <strong>opponents</strong>, <strong>winner</strong>, and <strong>loser</strong> ... be wary of this when joining in queries). Maps <a href="#squadmember">SquadMembers</a> in <strong>boxscore</strong> attribute.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>arena</strong> - The location of the Game as a string. Not necessarily at either of the two opponent's stadiums, especially in <a href="#tournamentgame">TournamentGames</a>. If it is at one of the opponent's stadiums, designate this by using the <a href="#squad">Squad.team.name</a> attribute.</li>
+
+<li><strong>date</strong> - Date of Game, using <code>datetime.date()</code>. Must specify this in order to distinguish this Game from others (using additionally one of the opponents).</li>
+
+<li><strong>id</strong> - primary key of the Game. There is no intrinsic usefulness of this ordering.</li>
+
+<li><strong>loser</strong> - The <a href="#squad">Squad</a> which lost the Game, or <code>None</code> if the Game is in the future (or any other atypical modality).</li>
+
+<li><strong>loser_id</strong> - ID of the losing <a href="#squad">Squad</a>, if available.</li>
+
+<li><strong>loser_score</strong> - The score of the losing <a href="#squad">Squad</a>, if available.
+
+<p>Note: stored as a primitive, <strong>not</strong> a derived stat, though technically it is a derived stat.</li></p>
+
+<li><strong>opponents</strong> - Should be of length two, holding both <a href="#squad">Squads</a> playing in this Game. There is no (nor should there be) any significance to order of the <a href="#squad">Squads</a> in this collection.</li>
+
+<li><strong>overtime</strong> - An integer specifying the number of the overtime in which the game finally ended, or <code>None</code> (or 0) when the game did not go into OT.</li>
+
+<li><strong>postseason</strong> - A boolean value marking whether game was postseason (<code>True</code>) or regular season (<code>False</code> or <code>None</code>). This is also determinable by using the discriminator used by SQLAlchemy to differentiate Game with the polymorphic TournamentGame.</li>
+
+<li><strong>winner</strong> - The <a href="#squad">Squad</a> which won the Game, or <code>None</code> if the Game is in the future (or any other atypical modality).</li>
+
+<li><strong>winner_id</strong> - ID of the winning <a href="#squad">Squad</a>, if available.</li>
+
+<li><strong>winner_score</strong> - The score of the winning <a href="#Squad">squad</a>, if available.
+
+<p>Note: stored as a primitive, <strong>not</strong> a derived stat, though technically it is a derived stat.</p></li>
+</ul>
+
+<h4>methods</h4>
+<ul>
+<li><strong>get_games_with_data(<em>session</em>[, limit=None[, random=True])</strong> - <code>static</code> - Query the database for only Games that have data for both <a href="#squad">Squads</a>. Useful in generating training (and testing) sets. Optionally specify how many Games to return, and whether the ordering of the returned Games should be random. By default there is no limit, and the ordering is random. You could specify e.g. a limit of 100 to effectively generate a training (and/or testing) set.</li>
+</ul>
+
+
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name="player">Player</a></span>
+<p class='doc string'>The Player class is an abstraction of <a href="#squadmember">SquadMember</a> over time. In practice this class is only used for navigating the database and obtaining displayable information; analysis is done on a Player through the <a href="#squadmember">SquadMember</a> class.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>career</strong> - mapping to <a href="#squadmember">SquadMembers</a>, i.e. the instances of the Player in each season he played.</li>
+<li><strong>first_name</strong> - First name</li>
+<li><strong>height</strong> - height in inches</li>
+<li><strong>id</strong> - primary key of player table. Matches player indexes used on <a href="http://stats.ncaa.org/">stats.ncaa.org</a></li>
+<li><strong>last_name</strong> - last name</li>
+<li><strong>middle_name</strong> - middle name (usually just <code>None</code>)</li>
+<li><strong>name_suffix</strong> - name suffix (e.g., "Jr."; usually <code>None</code>)</li>
+<li><strong>position</strong> - position player played (e.g., "C" for "Center")</li>
+<li><strong>weight</strong> - weight in pounds (usually not available)</li>
+</ul>
+
+<h4>Methods</h4>
+<ul>
+<li><strong>__init__(<em>first_name</em>, <em>last_name</em>[, middle_name=None][, name_suffix=None][, id=None][, height=None][, position=None])</strong> - Create new player. Be cautious about using this, as I've taken great care to ensure player indexes match those used on the NCAA website.</li>
+</ul>
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name="playerstatsheet">PlayerStatSheet</a></span>
+<p class='doc string'>Contains raw statistics describing a <a href="#squadmember">SquadMember's</a> performance in a particular <a href="#game">Game</a>. Nearly all of the analysis done with this database will use these statistics, even if indirectly.</p>
+
+<h4>Attributes</h4>
+
+<em>Note: stats are all integers except where otherwise noted. They all pertain to just one <a href="#squadmember">SquadMember</a> in one <a href="#game">Game</a>.</em>
+
+<ul>
+<li><strong>id</strong> - ID, primary key. There is no intrinsic usefulness to this ordering (apart from evaluating my workflow).</li>
+<li><strong>game</strong> - <a href="#game">Game</a> in question</li>
+<li><strong>game_id</strong> - ID of <a href="#game">Game</a> in question</li>
+<li><strong>squadmember</strong> - <a href="#squadmember">SquadMember</a> in question</li>
+<li><strong>squadmember_id</strong> - ID of <a href="#squadmember">SquadMember</a> in question</li>
+<div style="margin:8px;">Stats:</div>
+<li><strong>minutes_played</strong> <code>float</code></li>
+<li><strong>field_goals_made</strong></li>
+<li><strong>field_goals_attempted</strong></li>
+<li><strong>threes_made</strong></li>
+<li><strong>threes_attempted</strong></li>
+<li><strong>free_throws_made</strong></li>
+<li><strong>free_throws_attempted</strong></li>
+<li><strong>points</strong></li>
+<li><strong>offensive_rebounds</strong></li>
+<li><strong>defensive_rebounds</strong></li>
+<li><strong>rebounds</strong></li>
+<li><strong>assists</strong></li>
+<li><strong>turnovers</strong></li>
+<li><strong>steals</strong></li>
+<li><strong>blocaks</strong></li>
+<li><strong>fouls</strong></li>
+</ul>
+
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name='squad'>Squad</a></span>
+<p class='doc string'>Squads are <a href="#team">Teams</a> in a particular season. As such, they have a <strong>roster</strong> of <a href="#squadmember">SquadMembers</a>, who all played in this Squad in the given <strong>season</strong>. Data is also stored here about the schedule and the record of the teams. In the future stats such as RPI are to be added.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>conference</strong> - Store conference of Squad</li>
+<li><strong>id</strong> - Squad index, primary key of squad table.</li>
+<li><strong>losses</strong> - Collection of <a href="#game">Games</a> which Squad lost</li>
+<li><strong>rank</strong> - Store latest available rank of Squad in division.</li>
+<li><strong>roster</strong> - Collection of <a href="#squadmember">SquadMembers</a> in this Squad</li>
+<li><strong>rpi</strong> - Store latest available RPI of Squad.</li>
+<li><strong>schedule</strong> - Collection of <a href="#game">Games</a> in which Squad played / will play in season</li>
+<li><strong>season</strong> - Season in which Squad existed, e.g. "2012-13"</li>
+<li><strong>seed</strong> - Store seed (in a tournament), or <code>None</code> if Squad was not invited to the tournament.</li>
+<li><strong>stats</strong> - The <a href="#squadderivedstats">SquadDerivedStats</a> instance holding <em>cached</em> stats about the entire Squad</li>
+<li><strong>team</strong> - parent <a href="#team">Team</a></li>
+<li><strong>team_id</strong> - ID of parent <a href="#team">Team</a></li>
+<li><strong>wins</strong> - Collection of <a href="#game">Games</a> which Squad won</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>derive_stats()</strong> - Recalculate and cache the Squad <strong>stats</strong>. Note: does not commit any changes to database, so the database cache <em>will not</em> reflect your updates unless you call <code>session.commit()</code> yourself.</li>
+
+<li><strong>get(<em>session</em>, <em>teamname</em>, <em>season</em>)</strong> - <code>static</code> - Analogous to <strong><a href="#team">Team</a>.get(<em>session</em>, <em>name</em>)</strong>. Returns the Squad of the <a href="#team">Team</a> with name <em>teamname</em> in season <em>season</em>. Searches through <a href="#teamalias">TeamAliases</a> when looking for <em>teamname</em>, which is more forgiving.</li>
+
+<li><strong>get_rpi()</strong> - Calculate Squad's RPI using NCAA's formula. Supposedly indicative of strength of schedule. Stores result in Squad.rpi attribute, which will be persistent if you call <code>session.commit()</code>.</li>
+
+<li><strong>opponents([played=True])</strong> - Returns a list of the Squads that this Squad has played / will play in the given season. Set <code>played</code> to False to get a list of opponents throughout the entire season, even if the games are in the future.</li>
+
+<li><strong>_owp()</strong> - Calculate and return this Squad's opponents (to date) and return their unweighted winning percentage.</li>
+
+<li><strong>_oowp()</strong> - Calculate and return this Squad's opponents' opponents' unweighted winning percentage.</li>
+
+<li><strong>win_pct([weighted=False])</strong - Calculate a teams winning percentage. When <code>weighted</code> is False, calculates a simple ratio of wins to games played. When <code>weighted</code> is True, Home and Away wins and losses are weighted differently. I use the NCAA's rating system (used in calculating RPI) that values Home wins and Away losses as 0.6, and Home losses and away wins as 1.4. Some games are played in locations that are neither Home nor Away for either team (e.g. on a battleship), and these games are valued as 1.0 for wins and losses.</li>
+</ul>
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name="squadmember">SquadMember</a></span>
+<p class='doc string'>Instances of <a href="#player">Player</a> in a given season, playing for a given <a href="#squad">Squad</a>. Contains a collection of <a href="#playerstatsheet">PlayerStatSheets</a> for each <a href="#game">Game</a> in which the <a href="#squadmember">SquadMember</a> played in that season. Also references <a href="#squadmemberderivedstats">SquadMemberDerivedStats</a>, statistics derived from the <a href="#playerstatsheet">PlayerStatSheets</a> that are cached in the database. (See important info about cached stats in the <a href="#derivedstats">DerivedStats</a> documentation.)</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>id</strong> - Index, primary key. No intrinsic usefulness to the order.</li>
+<li><strong>jersey</strong> - Player's jersey number.</li>
+<li><strong>player</strong> - Reference to <a href="#player">Player</a> instance corresponding to this SquadMember. Use this to get vital information such as name and height of SquadMember</li>
+<li><strong>player_id</strong> - ID of corresponding <a href="#player">Player</a>. (Note this is the same ID that ncaa.org uses.)</li>
+<li><strong>stats</strong> - A <a href="#squadmemberderivedstats">SquadMemberDerivedStats</a> object containing season stats derived from <a href="#playerstatsheet">PlayerStatSheets</a> contained in <strong>statsheets</strong>. If no cached stats are available as the SquadMember is pulled from the database, the derived stats are calculated and cached. Stats are <em>not</em> saved to the database automatically -- call <code>session.commit()</code> in order to preserve them.</li>
+<li><strong>stats_id</strong> - ID of <a href="#squadmemberderivedstats">SquadMemberDerivedStats</a> object</li>
+<li><strong>statsheets</strong> - Collection of <a href="#playerstatsheet">PlayerStatSheets</a> containing the SquadMember's performance in all games in given season.</li>
+<li><strong>squad</strong> - <a href="#squad">Squad</a> with which SquadMember played. <a href="#squad">Squad</a> keeps the reference to the season and the <a href="#team">Team</a>.</li>
+<li><strong>squad_id</strong> - ID of <a href="#squad">Squad</a>.</li>
+<li><strong>year</strong> - The year (in college, e.g. "Fr" for "Freshman") of the SquadMember. Not always available, nor have I gone to great lengths to verify.</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>derive_stats()</strong> - Recalculate and recache the derived stats. (Note: does not commit any changes to the database. If you want to keep the cached stats, call <code>session.commit()</code>.</li>
+</ul>
+
+</li>
+
+
+
+<li>
+<span class='doc class'><a name="squadderivedstats">SquadDerivedStats</a></span>
+<p class='doc string'>A subclass of <a href="#derivedstats">DerivedStats</a> and polymorphic with <a href="#squadmemberderivedstats">SquadMemberDerivedStats</a>. Contains derived stats for <a href="#squad">Squad</a>.</p>
+</li>
+
+
+<li>
+<span class='doc class'><a name="squadmemberderivedstats">SquadMemberDerivedStats</a></span>
+<p class='doc string'>A subclass of <a href="#derivedstats">DerivedStats</a> and polymorphic with <a href="#squadderivedstats">SquadDerivedStats</a>. Contains derived stats for <a href="#squadmember">SquadMember</a></p>
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name="team">Team</a></span>
+<p class='doc string'>The Team class is an abstraction of <a href="#squad">Squad</a> over time. In practice this class is only used for navigating the database; analysis is done on a Team in a given season, i.e. a <a href="#squad">Squad</a>.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>id</strong> - Index of the Team. This is the primay_key of the `team` table in the database. All division 1 team IDs correspond to the IDs that NCAA.org uses; IDs of teams in other divisions have been randomly assigned.</li>
+<li><strong>aliases</strong> - A collection of <a href="#teamalias">TeamAliases</a> listing other names the Team might go under.</li>
+<li><strong>name</strong> - The primary name of the Team.</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>get(<em>session</em>, <em>name</em>)</strong> - <code>static</code> - Convenience method to pull a Team from the database by name. Note: this is a little more forgiving than calling <code>session.query(Team).filter_by(name=<em>name</em>).one()</code> in that it will search through <a href="#teamalias">TeamAliases</a> and is not case sensitive. Obviously that also makes it a little more expensive. An exception is still raised if result of query is non-unique.</li>
+
+<li><strong>search(<em>session</em>, <em>name</em>[, threshold=.9][, method=<em>fuzzymatch</em>])</strong> - <code>static</code> - Search Teams by name and return a list of tuples <code>(<em>Team</em>, <em>Match Score</em>,)</code> as a result. The <code>method</code> can be specified manually: it must be a function that takes two strings as parameters (the first will be <em>name</em>) and return a float in [0, 1]. Specifying the <code>threshold</code> will set the cutoff above which matches will be returned. This method searches through <a href="#teamalias">TeamAliases</a>, but results are filtered to be unique (i.e., a particular Team will only be returned once, even if several of its aliases match the query).
+
+<p>By default <em>fuzzymatch</em> tries to be <code>Levenstein</code>, if you have that module installed. It will try to find the <code>jellyfish</code> package next. Lastly it will resort to the standard library module <code>difflib</code>, which isn't ideal for this task, but might do OK.</p></li>
+</ul>
+</li>
+
+
+<li>
+<span class='doc class'><a name="teamalias">TeamAlias</a></span>
+<p class='doc string'>Store alternate names of a <a href="#team">Team</a>. Makes maintaining database easier by mitigating the amount of time spent reviewing and normalizing names in data being added to the database: different sources of data refer to teams in different ways, often abbreviating them. For example, the University of Mississippi is commonly, but not always, referred to as "Ole Miss." TeamAliases also makes exploring the database easier for the user by virtually eliminating the need to remember the "proper" way of referring to a team in the context of the database. Note that teams are universally referred to with a variation of their <em>institution</em> name (e.g., "Duke") and <strong>never</strong> their actual athletic team moniker (e.g., "Blue Devils").</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>id</strong> - Index of the TeamAlias, primary key.</li>
+<li><strong>name</strong> - The alias. Normalized to upper case and stripped non-alpha-numeric characters. (This is useful to know when trying to search through.)</li>
+<li><strong>team</strong> - Parent <a href="#teamalias">Team</a>.</li>
+<li><strong>team_id</strong> - Parent <a href="#team">Team</a> ID</li>
+</ul>
+</li>
+
+
+
+
+
+
+
+
+<li>
+<span class='doc class'><a name="tournament">Tournament</a></span>
+<p class='doc string'>Store tournament brackets, either real or simulated. Provides methods for simulating, correcting, and scoring Tournaments, as well as exporting the results as JSON.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>id</strong> - Index of the Tournament, primary key.</li>
+<li><strong>delim</strong> - A delimiter from which to construct the name of the composite regions when teams meet in the Final Four. Really a cosmetic detail.</li>
+<li><strong>games</strong> - Collection of <a href="#tournamentgame">TournamentGames</a></li>
+<li><strong>season</strong> - A string used to identify the Tournament to a Human, which will most obviously be the season which the Tournament concluded</li>
+<li><strong>regions</strong> - A list of regions in the Tournament. By default they are North, East, South, and West. In actuality their values don't matter so much, so long as they are unique. Note that the first two regions in this list (e.g., North and East) will meet each in other in the Final Four, and the second two (e.g., South and West) will meet each other. The championship will be between a team from one of the first to regions and a team from one of the last regions. This matters when entering data and simulating the Tournament.</li>
+<li><strong>rounds</strong> - A list of the rounds in the Tournament. By default they are <em>finals, finalfour, elite8, sweet16, 2nd, 1st</em>. You can set a different one on <code>__init__()</code>, but if you do, you're gonna have a bad time. There's currently no place for the games nobody cares about (the play-ins). I might implement them, but it's not a huge priority or concern of mine.
+
+<em>Implementation detail!</em> Both <strong>rounds</strong> and <strong>regions</strong> are transient properties of the class. They are stored in the database as <strong>rounds_store</strong> and <strong>regions_store</strong>, respectively, which join the lists with the pipe ('|') character. This is good to know if you want to access the DB outside of the object model I've written.</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(<em>season</em>[, regions=['North', 'East', 'South', 'West']][, rounds=None][, delim='/'])</strong> - Set up a new Tournament. See attributes documentation for details on parameters. Tournament is initialized with a set of empty <a href="#tournamentgame">TournamentGames</a>.</li>
+
+<li><strong>correct(<em>realtourny</em>)</strong> - compare current Tournament to a Tournament holding the actual results. The transient (i.e., never saved to database) attribute <strong>accurate</strong> is set to <code>True</code> or <code>False</code>. The <em>realtourny</em> does not have to be completed: any games for which the <strong>winner</strong> is <code>None</code> are simply ignored (useful for correcting tournaments in progress).</li>
+
+<li><strong>empty_bracket(name=<em>name</em>)</strong> - create an empty bracket from the current Tournament. Returns a new Tournament in the first round opponents are identical to the current Tournament, but all information concerning later rounds and results have been stripped. Completely generative; does not affect current Tournament.</li>
+
+<li><strong>export(<em>method</em>)</strong> - sling Tournament into JSON for web presentation. The transient attribute <strong>accurate</strong> is included in this export, if it is set. Methods are <em>heap</em> (outputs an array of nodes) and <em>nested</em> (outputs a tree structure). Default is <em>heap</em>. Both types of serialization come wrapped in an object that contains the meta information <em>season</em>, <em>rounds</em>, and <em>regions</em>.</li>
+
+<li><strong>get(<em>round_</em>[, region=0[, n=0]])</strong> - Return the <a href="#tournamentgame">TournamentGame</a> in specified round, region, and offset (see <strong>index()</strong> for details).</li>
+
+<li><strong>get_by_id(<em>n</em>)</strong> Get the <a href="#tournamentgame">TournamentGame</a> at the specified linear heap index. Subscripting is also supported (e.g., <code>tournament[0]</code> is equivalent to <code>tournament.get_by_id(0)</code>).</li>
+
+<li><strong>index(<em>round_</em>[, region=0[, n=0]])</strong> - Return the position in the heap of the <a href="#tournamentgame">TournamentGame</a> in given round, region, and offset. You can use a list index for the round or region, or you can use their textual value. The offset is the position from the top of the bracket of the game in this round: e.g., in the 1st round the very top of the bracket is the 1 vs. 16 seed game, the next is the 8 vs. 9 seed game, etc., down to the 2 vs. 15 seed game. The offset <em>n</em> is the 0-indexed position of the desired game from the top of the bracket.</li>
+
+<li><strong>lookup(<em>n</em>)</strong> - Get the <a href="#tournamentgame">TournamentGame</a> with index <em>n</em>. Tournament is a 0-indexed binary heap, and this method will return the <em>n<sup>th</sup></em> (linear) game.</li>
+
+<li><strong>set(<em>game</em>, <em>round_</em>[, region=0[, n=0]])</strong> - Set the game in the tournament equal to the given game. Note that I'd recommend <em>altering</em> current games rather than setting new ones, as decoupling a <a href="#tournamentgame">TournamentGame</a> from a Tournament will not actually delete the TournamentGame, it'll just lose it in the database. It's not hard to garbage collect loose games in the database, but it can also be avoided easily.</li>
+
+<li><strong>set_by_id(<em>n</em>, <em>game</em>)</strong> - Sets the game at index <em>n</em> equal to specified <a href="#tournamentgame">TournamentGame</a>. See <strong>set()</strong> for an argument not to use this. Subscripting is supported for Tournament instances in lieu of calling <strong>set_by_id()</strong></li>
+
+<li><strong>score(<em>realtourny</em>[, <em>pointsmap</em>])</strong> - determine score of the bracket as evaluated against the results of the real Tournament.
+
+<p>Optionally specify <em>pointsmap</em> to give a custom number of points for correct predictions in each round. This can be a dictionary mapping round labels to points (raises NameError if you try to map a round label that doesn't exist in <strong>rounds</strong>) or a list of point values, starting from Championship and ending at the first round. By default uses ESPN's scoring system, which allows a max score of 320 for each round (so first round games are worth 10, second round games are 20, etc.).</p>
+
+This method has the side effect of calling <strong>correct()</strong> on the Tournament, which will set the <strong>accurate</strong> attribute on each applicable <a href="#tournamentgame">TournamentGame</a>. </li>
+
+<li><strong>simulate(<em>decide</em>)</strong> - Iterates through every game in the Tournament and determines its outcome using specified decision function. Decision function should take a <a href="game">Game</a> as its argument. Several return values are supported for the decision function. Most easily, just return the <a href="#game">Game</a> with the <strong>winner</strong> and <strong>loser</strong> attributes filled out. Another option is to return a tuple of <a href="#squad">Squads</a> in the order (winner, loser). Lastly, you can just return the <a href="#squad">Squad</a> that is predicted to win.</li>
+</ul>
+
+<h4>Implements</h4>
+
+<ul>
+<li><strong>__iter__()</strong> - Iterates through Tournament heap sequentially, starting from very last <a href="#tournamentgame">TournamentGame</a> and ending at the top of the heap (the championship).</li>
+
+<li><strong>__len__()</strong> - Return size of heap. This is 63 in the standard scenario, at least until play-in games are supported.</li>
+</ul>
+</li>
+
+
+
+
+<li>
+<span class='doc class'><a name="tournamentgame">TournamentGame</a></span>
+<p class='doc string'>Subclass of <a href="#game">Game</a>. Stores information specific to <a href="#tournament">Tournament</a> in addition to regular game information.</p>
+
+<h4>Attributes</h4>
+
+<div>Inherits from and is polymorphic with <a href="#game">Game</a>.</div>
+
+<ul>
+<li><strong>accurate</strong> - <code>transient</code> - set by the <strong><a href="#tournament">Tournament</a>.correct()</strong> method when correcting the database. This attribute is never saved to the database, nor is it reconstructed when the TournamentGame is loaded from the database.</li>
+<li><strong>index</strong> - Index within <a href="#tournament">Tournament</a>.</li>
+<li><strong>tournament</strong> - <a href="#tournament">Tournament</a> in which game is played</li>
+<li><strong>tournament_id</strong> - ID of the containing <a href="#tournament">Tournament</a>.</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(tournament, index)</strong> - Probably will never need to init a TournamentGame directly, since the <a href="#tournament">Tournament</a> takes care of that. It's much better to modify the TournamentGames created by the <a href="#tournament">Tournament</a>. In case you do create one, you need to specify the <a href="#tournament">Tournament</a> in which the game was / will be / would be played as well as the index (see <a href="#tournament">Tournament</a>.lookup()) within that <a href="#tournament">Tournament</a>.</li>
+<li><strong>next()</strong> - Return the next TournamentGame in the <a href="#tournament">Tournament</a>. In other words, the TournamentGame to which the winner of the current game will advance. Returns <code>None</code> in the championship game.</li>
+</ul>
+</li>
+
+
+
+
+
+
+<li>
+<span class='doc class'><a name="gamedecider">GameDecider</a></span>
+<p class='doc string'>Wrapper for NLTK / SciKit-Learn classifiers for use primarily as the decision function in <a href="#tournament">Tournament</a>.simulate(). Implements <code>__callable__</code>, which expects a <a href="#game">Game</a> as the sole parameter. Returns a classification in a form that is interpretable by the simulation method.</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>classifier</strong> - The classifier. Use NLTK or SKL classifiers or a different one if you're into that.</li>
+
+<li><strong>extractor</strong> - The feature extractor. Has to be callable and take the items in <a href="#game">Game</a>.opponents as arguments (i.e., it takes two Squads as its arguments). and returns something that is interpretable by the <code>classifier</code> (and the <code>normalizer</code>).</li>
+
+<li><strong>normalize</strong> - Something callable that will normalize a feature set returned by <code>extractor</code>.</li>
+
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(classifier, extractor[, normalize=None[, method=None]])</strong> - Pass a classifier and a feature extraction function that returns an object interpretable by your classifier's classification method. If the <code>classifier</code> is in NLTK or SKL format, the classification method to call is inferred. If it is a different sort of classifier, use the <code>method</code> parameter to specify what method to call on the classifier to classify a feature set. Use the <code>normalize</code> parameter to normalize the feature set prior to classifying it. This could be done in the feature extractor already.</li>
+</ul>
+</li>
+
+
+
+
+</ul>
+</div> <!-- end of class doc -->
+
+
+
+
+
+<!-- Eval Module doc -->
+<div id="gsdoc">
+<h3><a name="eval">ncaalib.eval</a></h3>
+
+<p>Note: this documentation only shows the class from the eval module that you'll actually use. There's some more in there, but it probably won't be directly useful to you.</p>
+
+<p>Important: To use the TournamentScorer with the <code>scoring</code> parameter of sklearn's <code>GridSearchCV</code> you *MUST* be using sklearn 0.14 or greater!</p>
+
+<ul>
+
+
+
+
+<li>
+<span class='doc class'><a name="tournamentscorer">TournamentScorer</a></span>
+<p class='doc string'>A Scorer that implements the scikit-learn Scorer protocol. It is different in that it does not care about whatever test set it is given to evaluate; rather, it evaluates classifiers against tournaments in previous years. You'll have to make sure yourself that you do not train on any post-season games, otherwise the results obtained here will be meaningless.</p>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(session, extractor[, round_=None[, seasons=['2009-10', '2010-11', '2011-12'][, normalize=None[, method=None]]]])</strong> - Create a TournamentScorer object. You want to pass an object to the <a href="#gridsearch">GridSearch</a> as the <code>scoring</code> argument. You can set the Tournaments you want to test on by passing a list of <code>seasons</code>. Specify <code>round_</code> as an index of a round (or a list of indexes) to target accuracy on specific tournament rounds, e.g. passing <code>[0,1]</code> will optimize for accurately picking the Champion and the two Finalists, while passing <code>2</code> will optimize for accurately picking the Final Fourists. Passing <code>None</code> (default) will maximize overall Tournament score.</li>
+</ul>
+</li>
+
+
+</ul>
+</div>
+<!-- End of GS module doc -->
+
+
+
+
+
+
+<div id="datadoc">
+<h3><a name="data">ncaalib.data</a></h3>
+
+<p>Various classes for data slinging and normalization.</p>
+
+
+<ul>
+
+
+
+<li>
+<span class='doc class'><a name="dataset">DataSet</a></span>
+<p class='doc string'>Container for nltk or sklearn data. Does splitting and normalization</p>
+
+<h4>Attributes</h4>
+
+<ul>
+<li><strong>data</strong> - Full data set normalized against training set.</li>
+<li><strong>test</strong> - Test set normalized against training set.</li>
+<li><strong>train</strong> - Normalized training set.</li>
+</ul>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(data, [split=.75[, normalizer=Normalizer]])</strong> - Specify the proportion of training set to testing set with <code>split</code>. Specify what sort of normalizer to use with <code>normalizer</code>.</li>
+
+<li><strong>convert(nltk_style_features)</strong> - Convert nltk-style features to sklearn. I realize this is misleadingly named and it will be remedied in future versions (by autodetecting input type and outputting accordingly).</li>
+
+<li><strong>normalize(*args, **kwargs)</strong> - Aliases whatever normalization method you initialized with. Useful for normalizing miscellaneous unseen featuresets against the training set contained in this object. (For example, you need this if you are going to normalize the inputs in <a href="#tournamentscorer">TournamentScorer</a>.)</li>
+</ul>
+</li>
+
+
+
+
+
+<li>
+<span class='doc class'><a name="normalizer">Normalizer</a></span>
+<p class='doc string'>A class that takes a training set and normalizes the data. Currently it can either rescale the data (map data onto range [0,1]) or standardize (remove the mean and set unit variance).</p>
+
+<h4>Methods</h4>
+
+<ul>
+<li><strong>__init__(train_set, method='rescale')</strong> - Create a Normalizer. Currently the only supported methods are <code>rescale</code> and <code>standardize</code> Supported input types are sklearn's training set (either labeled in the form of a tuple (X, y,) or unlabeled in the for of a numpy matrix) or nltk's training set (a list of tuples in the form (features, label,)).</li>
+
+<li><strong>normalize(data)</strong> - Normalize data according to the training set and method provided. Data can be nltk or sklearn format.</li>
+
+<li><strong>__call__(data)</strong> - Alias of <code>normalize(data)</code>.</li>
+</ul>
+</li>
+
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="fndoc">
+
+<h3><a name="otherfn">Helper Functions</a></h3>
+
+<ul>
+
+
+<li>
+<strong>load_db(<em>path</em>)</strong>
+<p class='doc string'>Load the (SQLite3) database at the specified path. Return a new <code>Session</code>.</p>
+</li>
+
+
+</ul>
+
+</div>
+
+
+
+<div id="examples">
+
+<h3><a name="examples">Examples</a></h3>
+
+<span class='example header'><a name="loading">Loading the database</a></span>
+<p class='doc string'>The easiest way to load the database is to use the <code>load_db</code> helper function:</p>
+
+<pre><code>>>> session = load_db('ncaa.db')</code></pre>
+
+<p>This is just a quick way to call the generic SQAlchemy connection routine:</p>
+
+<pre><code>>>> engine = create_engine('sqlite:///ncaa.db')
+>>> Session = sessionmaker(bind=engine)
+>>> session = Session()</code></pre>
+
+<span class='example header'><a name="queries">Queries</a></span>
+
+<p>Queries to the database can be made on sessions in the ordinary SQLAlchemy way. For example, a simple query to find all of the <a href="#squad">Squads</a> in the 2011-12 season, do:</p>
+
+<pre><code>>>> session.query(Squad).filter_by(season='2011-12').all()</code></pre>
+
+<p>When dealing with seasons, it's helpful to know that the less-than and great-than comparators work well:</p>
+
+<pre><code>>>> session.query(Squad).filter(Squad.season>'2009-10').all()</code></pre>
+
+<p>This will return all <a href="#squad">Squads</a> from every season after 2009-10.</p>
+
+<p>Since the database is richly interconnected the <code>join</code> operators are very useful. For example, to find every <a href="#game">Game</a> that Duke ever played in:</p>
+
+<pre><code>>>> session.query(Game).join(Game.opponents)\
+                   .join(Team).filter(Team.name=="Duke")\
+                   .all()</code></pre>
+
+<span class='example header'><a name="shortcuts">shortcuts</a></span>
+
+<p>I wrote shortcuts for querying <a href="#team">Teams</a> and <a href="#squad">Squads</a> by name which are case-insensitive and search through all <a href="#teamalias">TeamAliases</a> in order to make finding the objects you want in the database a bit less of a pain. For example:</p>
+
+<pre><code>>>> Team.get(session, 'FIU') == Team.get(session, '~*~fLoRiDa InTL~*~')
+True</code></pre>
+
+<p>(In case you are a middle-school girl and ~~~* tYpE lIkE tHiS *~~~.)</p>
+
+<span class='example header'><a name="tournaments">Tournaments</a></span>
+
+<p>When creating and testing a model it is useful to simulate your model on past tournaments. You can create an empty bracket (like the one you'd fill out for a pool) for a <a href="#tournament">Tournament</a> from any year with the <strong><a href="#tournament">Tournament</a>.empty_bracket()</strong> method. For example, an empty 2010-11 bracket can be made like this:</p>
+
+<pre><code>>>> tourny10_11 = session.query(Tournament)\
+                     .filter_by(season='2010-11').one()
+>>> bracket10_11 = tourny10_11.empty_bracket()</code></pre>
+
+<span class='example header'><a name="simulating">Simulating</a></span>
+
+<p>You can now simulate a <a href="#tournament">Tournament</a> using your custom AI by calling the <strong><a href="#tournament">Tournament</a>.simulate()</strong> function on the empty bracket. I'll give you a simple example of how to do this.</p>
+
+<p>Decision functions for simulation should take one <a href="#game">Game</a> as an argument and return a <a href="#squad">Squad</a> as a winner. (For fancier return values, see <strong><a href="#tournament">Tournament</a>.simulate()</strong> documentation). That means you'll have access to the stats of both <a href="#squad">Squads</a> in the <a href="#tournamentgame">TournamentGame</a>, which will enable you to apply a custom method of determining the winner.</p>
+
+<p>In this simple example, the <a href="#squad">Squad</a> which has the higher field goal shooting percentage will be declared the winner. Here's the code:</p>
+
+<pre><code>def decision_function(game):
+    if game.opponents[0].stats.fg_pct > game.opponents[1].stats.fg_pct:
+        # First Squad in Game.opponents list wins
+        return game.opponents[0]
+    else:
+        # Second Squad wins
+        return game.opponents[1]
+</code></pre>
+
+<p>Now to apply this decision function (using the empty bracket for 2010-11 made above):</p>
+
+<pre><code>>>> bracket10_11.simulate(decision_function)</code></pre>
+
+<p>This will fill the empty bracket with a simulated <a href="#tournament">Tournament</a> based on the decision function. You can access the winners and losers of any <a href="#tournamentgame">TournamentGame</a>. For example, if you want to know who won and lost the Championship:</p>
+
+<pre><code>>>> bracket10_11.get('finals').winner
+&lt;Squad('Kansas', '2010-11')&gt;
+>>> bracket10_11.get('finals').loser
+&lt;Squad('Ohio St.', '2019-11')&gt;</code></pre>
+
+<p>In theory that wouldn't have been a terrible prediction for the 2011 Tournament. Those are both #1 seeds and both shot over 50%, which is really pretty good. In practice, though, this algorithm fared pretty poorly. You may remember in 2011 the Final Four were #3 Uconn again #4 Kentucky (who squeaked by Ohio St. in the Sweet 16), and #8 Butler vs. #11 VCU (who defeated Kansas pretty handily in the Elite 8).</p>
+
+<p>You can find out how well your algorithm would have performed in a pool by scoring it against the real results:</p>
+
+<pre><code>>>> bracket10_11.score(tourny10_11)
+360</code></pre>
+
+<p>By default this uses ESPN's scoring system, which awards a maximum of 320 points per round (so you get 10 points per game in the first round, 20 in the second, up to 320 in the championship). The max points in that system is 1920. Our simple algorithm only scored 360. So I guess that decision function need a bit of work. Using the data stored and related in the DB it's not difficult to create sophisticated, intelligent models for predicting the outcome of each game and, by extension, the results of the tournament.</p>
+
+<p>I'll update this page with any changes I make to the object model or database. Tom and I will also write a new post with our predictions for this year after Selection Sunday, and once the brackets are locked we'll write a little more about what our decision function ended up doing.</p>
+
+</div> <!-- End of examples -->
+
+
+
+
+</div> <!-- end of #docs -->
+
+
+
+
+<div id='menubar'><div id='navtitle'>Classes</div></div>
+
+</div></div></div></div>
+
+
+</body>
+
+</html>

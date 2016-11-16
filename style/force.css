@@ -1,0 +1,30 @@
+@charset "utf-8";
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+#dash {
+	width: 800px;
+}
+
+#dash a {
+	font-size: 2em;
+	text-decoration: none;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: #0099FF;
+}
+
+#dash a:hover {
+	color: #0066FF;
+}
+
+#dash a.active {
+	color: #CC0000;
+}

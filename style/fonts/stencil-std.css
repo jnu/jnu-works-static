@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Stencil Std';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Stencil Std'), url(stencil-std.woff) format('woff');
+}

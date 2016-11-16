@@ -1,0 +1,534 @@
+{
+    "nodes": [
+        {
+            "name": "Ancient Greek",
+            "meta": {
+                "abbr": "grk"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "kosmos",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Modern Greek",
+            "meta": {
+                "abbr": "ng"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "kosmos",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Latin",
+            "meta": {
+                "abbr": "lat"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mundus",
+                "PIEroot": "mH₂nd-",
+                "group": 1
+            }
+        },
+        {
+            "name": "Italian",
+            "meta": {
+                "abbr": "it"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mondo",
+                "PIEroot": "mH₂nd-",
+                "group": 1
+            }
+        },
+        {
+            "name": "French",
+            "meta": {
+                "abbr": "fr"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "monde",
+                "PIEroot": "mH₂nd-",
+                "group": 1
+            }
+        },
+        {
+            "name": "Spanish",
+            "meta": {
+                "abbr": "sp"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mundo",
+                "PIEroot": "mH₂nd-",
+                "group": 1
+            }
+        },
+        {
+            "name": "Rumanian",
+            "meta": {
+                "abbr": "rum"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "lume",
+                "PIEroot": "lewk-s-men",
+                "group": 2
+            }
+        },
+        {
+            "name": "Old Irish",
+            "meta": {
+                "abbr": "ir"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "domun",
+                "PIEroot": "dʰewb-",
+                "group": 3
+            }
+        },
+        {
+            "name": "Modern Irish",
+            "meta": {
+                "abbr": "nir"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "domhan",
+                "PIEroot": "dʰewb-",
+                "group": 3
+            }
+        },
+        {
+            "name": "Welsh",
+            "meta": {
+                "abbr": "w"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "byd",
+                "PIEroot": "gʷeih₃w-",
+                "group": 4
+            }
+        },
+        {
+            "name": "Breton",
+            "meta": {
+                "abbr": "br"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "bed",
+                "PIEroot": "gʷeih₃w-",
+                "group": 4
+            }
+        },
+        {
+            "name": "Gothic",
+            "meta": {
+                "abbr": "goth"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "fairhwus",
+                "PIEroot": "",
+                "group": 5
+            }
+        },
+        {
+            "name": "Old Norse",
+            "meta": {
+                "abbr": "on"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "heimr",
+                "PIEroot": "",
+                "group": 6
+            }
+        },
+        {
+            "name": "Danish",
+            "meta": {
+                "abbr": "dan"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "verden",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Swedish",
+            "meta": {
+                "abbr": "sw"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "verld",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Old English",
+            "meta": {
+                "abbr": "oe"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "middangeard",
+                "PIEroot": "medhy-, greh₃d-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Middle English",
+            "meta": {
+                "abbr": "me"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "werld",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Modern English",
+            "meta": {
+                "abbr": "ne"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "world",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Dutch",
+            "meta": {
+                "abbr": "du"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "wereld",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Old High German",
+            "meta": {
+                "abbr": "ohg"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mittilgart",
+                "PIEroot": "medhy-, greh₃d-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Middle High German",
+            "meta": {
+                "abbr": "mhg"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "werlt",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Modern German",
+            "meta": {
+                "abbr": "nhg"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "welt",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Lithuanian",
+            "meta": {
+                "abbr": "lith"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "pasaulis",
+                "PIEroot": "sóh₂wl̥",
+                "group": 8
+            }
+        },
+        {
+            "name": "Lettish",
+            "meta": {
+                "abbr": "lett"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "pasaule",
+                "PIEroot": "sóh₂wl̥",
+                "group": 8
+            }
+        },
+        {
+            "name": "Old Church Slavonic",
+            "meta": {
+                "abbr": "chsl"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mirъ",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Serbo-Croatian",
+            "meta": {
+                "abbr": "scr"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "svijet",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Bohemian",
+            "meta": {
+                "abbr": "boh"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "svět",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Polish",
+            "meta": {
+                "abbr": "pol"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "świat",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Russian",
+            "meta": {
+                "abbr": "russ"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "mir",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Sanskrit",
+            "meta": {
+                "abbr": "skt"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "loka-",
+                "PIEroot": "loukos",
+                "group": 0
+            }
+        },
+        {
+            "name": "Avestan",
+            "meta": {
+                "abbr": "av"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "gaetha-",
+                "PIEroot": "gʷeih₃w-",
+                "group": 4
+            }
+        },
+        {
+            "name": "Gothic",
+            "meta": {
+                "abbr": "goth"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "manaseþs",
+                "PIEroot": "man-, séh₁mn̥",
+                "group": 5
+            }
+        },
+        {
+            "name": "Old Norse",
+            "meta": {
+                "abbr": "on"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "verǫld",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Old English",
+            "meta": {
+                "abbr": "oe"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "weorold",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Middle English",
+            "meta": {
+                "abbr": "me"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "world",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Old High German",
+            "meta": {
+                "abbr": "ohg"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "weralt",
+                "PIEroot": "uiHro, al-",
+                "group": 6
+            }
+        },
+        {
+            "name": "Russian",
+            "meta": {
+                "abbr": "russ"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "svet",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Sanskrit",
+            "meta": {
+                "abbr": "skt"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "jagat-",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Sanskrit",
+            "meta": {
+                "abbr": "skt"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "bhu-",
+                "PIEroot": "",
+                "group": 0
+            }
+        },
+        {
+            "name": "Sanskrit",
+            "meta": {
+                "abbr": "skt"
+            },
+            "data": {
+                "concept": "world",
+                "sign": "bhuvana-",
+                "PIEroot": "",
+                "group": 0
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": 11,
+            "target": 31,
+            "value": 1
+        },
+        {
+            "source": 12,
+            "target": 32,
+            "value": 1
+        },
+        {
+            "source": 15,
+            "target": 33,
+            "value": 1
+        },
+        {
+            "source": 16,
+            "target": 34,
+            "value": 1
+        },
+        {
+            "source": 19,
+            "target": 35,
+            "value": 1
+        },
+        {
+            "source": 28,
+            "target": 36,
+            "value": 1
+        },
+        {
+            "source": 29,
+            "target": 37,
+            "value": 1
+        },
+        {
+            "source": 29,
+            "target": 38,
+            "value": 1
+        },
+        {
+            "source": 29,
+            "target": 39,
+            "value": 1
+        }
+    ],
+    "meta": {
+        "groups": 10
+    }
+}

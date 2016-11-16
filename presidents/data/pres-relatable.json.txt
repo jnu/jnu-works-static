@@ -1,0 +1,574 @@
+{
+    "id": 3074538892,
+    "name": "Root",
+    "children": [
+        {
+            "id": 3074546048,
+            "name": "Drinking Habits: Teetotaler",
+            "children": [
+                {
+                    "id": 3074547104,
+                    "name": "Weight: Obese",
+                    "children": [
+                        {
+                            "id": 3074546888,
+                            "name": "Zachary Taylor",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 3074546936,
+                    "name": "Weight: Average",
+                    "children": [
+                        {
+                            "id": 3074547056,
+                            "name": "Musicality: Musician",
+                            "children": [
+                                {
+                                    "id": 3074546912,
+                                    "name": "Millard Fillmore",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074547008,
+                            "name": "Musicality: Appreciator",
+                            "children": [
+                                {
+                                    "id": 3074546984,
+                                    "name": "William Henry Harrison",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074547032,
+                    "name": "Weight: Overweight",
+                    "children": [
+                        {
+                            "id": 3074547272,
+                            "name": "Facial Hair: Clean-shaven",
+                            "children": [
+                                {
+                                    "id": 3074547128,
+                                    "name": "George W. Bush",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074547200,
+                            "name": "Facial Hair: Beard",
+                            "children": [
+                                {
+                                    "id": 3074547176,
+                                    "name": "Rutherford B. Hayes",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3074544128,
+            "name": "Drinking Habits: Casual Drinker",
+            "children": [
+                {
+                    "id": 3074544584,
+                    "name": "Musicality: Not Musical",
+                    "children": [
+                        {
+                            "id": 3074545136,
+                            "name": "Weight: Average",
+                            "children": [
+                                {
+                                    "id": 3074545280,
+                                    "name": "Facial Hair: Clean-shaven",
+                                    "children": [
+                                        {
+                                            "id": 3074545112,
+                                            "name": "John F. Kennedy",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074545208,
+                                    "name": "Facial Hair: Beard",
+                                    "children": [
+                                        {
+                                            "id": 3074545184,
+                                            "name": "James A. Garfield",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074545088,
+                            "name": "Weight: Overweight",
+                            "children": [
+                                {
+                                    "id": 3074545376,
+                                    "name": "Promiscuity: Philanderer",
+                                    "children": [
+                                        {
+                                            "id": 3074545352,
+                                            "name": "Lyndon B. Johnson",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074545448,
+                                    "name": "Promiscuity: Restrained",
+                                    "children": [
+                                        {
+                                            "id": 3074545304,
+                                            "name": "James Monroe",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074543744,
+                    "name": "Musicality: Musician",
+                    "children": [
+                        {
+                            "id": 3074544704,
+                            "name": "Promiscuity: Libertine",
+                            "children": [
+                                {
+                                    "id": 3074544752,
+                                    "name": "Weight: Average",
+                                    "children": [
+                                        {
+                                            "id": 3074544728,
+                                            "name": "Thomas Jefferson",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074544800,
+                                    "name": "Weight: Overweight",
+                                    "children": [
+                                        {
+                                            "id": 3074544656,
+                                            "name": "John Quincy Adams",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074544632,
+                            "name": "Promiscuity: Philanderer",
+                            "children": [
+                                {
+                                    "id": 3074544896,
+                                    "name": "Weight: Average",
+                                    "children": [
+                                        {
+                                            "id": 3074544872,
+                                            "name": "Warren G. Harding",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074544944,
+                                    "name": "Weight: Overweight",
+                                    "children": [
+                                        {
+                                            "id": 3074544824,
+                                            "name": "Bill Clinton",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074544776,
+                            "name": "Promiscuity: Restrained",
+                            "children": [
+                                {
+                                    "id": 3074545040,
+                                    "name": "Weight: Average",
+                                    "children": [
+                                        {
+                                            "id": 3074545016,
+                                            "name": "John Tyler",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074544296,
+                                    "name": "Weight: Overweight",
+                                    "children": [
+                                        {
+                                            "id": 3074544968,
+                                            "name": "Harry S. Truman",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074544176,
+                    "name": "Musicality: Appreciator",
+                    "children": [
+                        {
+                            "id": 3074544608,
+                            "name": "Weight: Underweight",
+                            "children": [
+                                {
+                                    "id": 3074544488,
+                                    "name": "James Madison",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074544224,
+                            "name": "Weight: Average",
+                            "children": [
+                                {
+                                    "id": 3074544272,
+                                    "name": "Promiscuity: Libertine",
+                                    "children": [
+                                        {
+                                            "id": 3074544248,
+                                            "name": "George H. W. Bush",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074544344,
+                                    "name": "Promiscuity: Philanderer",
+                                    "children": [
+                                        {
+                                            "id": 3074544200,
+                                            "name": "Franklin D. Roosevelt",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074543816,
+                                    "name": "Promiscuity: Restrained",
+                                    "children": [
+                                        {
+                                            "id": 3074544512,
+                                            "name": "Facial Hair: Clean-shaven",
+                                            "children": [
+                                                {
+                                                    "id": 3074544368,
+                                                    "name": "Barack Obama",
+                                                    "children": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "id": 3074544440,
+                                            "name": "Facial Hair: Beard",
+                                            "children": [
+                                                {
+                                                    "id": 3074544416,
+                                                    "name": "Benjamin Harrison",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074544560,
+                            "name": "Weight: Overweight",
+                            "children": [
+                                {
+                                    "id": 3074544152,
+                                    "name": "George Washington",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3074544104,
+            "name": "Drinking Habits: Heavy Drinker",
+            "children": [
+                {
+                    "id": 3074546072,
+                    "name": "Facial Hair: Sideburns",
+                    "children": [
+                        {
+                            "id": 3074545832,
+                            "name": "Martin Van Buren",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "id": 3074545472,
+                    "name": "Facial Hair: Clean-shaven",
+                    "children": [
+                        {
+                            "id": 3074545616,
+                            "name": "Musicality: Not Musical",
+                            "children": [
+                                {
+                                    "id": 3074545808,
+                                    "name": "Promiscuity: Philanderer",
+                                    "children": [
+                                        {
+                                            "id": 3074545784,
+                                            "name": "Andrew Jackson",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074545424,
+                                    "name": "Promiscuity: Restrained",
+                                    "children": [
+                                        {
+                                            "id": 3074545736,
+                                            "name": "John Adams",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074545712,
+                            "name": "Musicality: Musician",
+                            "children": [
+                                {
+                                    "id": 3074545592,
+                                    "name": "Richard Nixon",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074545664,
+                            "name": "Musicality: Appreciator",
+                            "children": [
+                                {
+                                    "id": 3074545640,
+                                    "name": "James Buchanan",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074545496,
+                    "name": "Facial Hair: Moustache",
+                    "children": [
+                        {
+                            "id": 3074545928,
+                            "name": "Weight: Obese",
+                            "children": [
+                                {
+                                    "id": 3074545880,
+                                    "name": "Grover Cleveland",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074546024,
+                            "name": "Weight: Overweight",
+                            "children": [
+                                {
+                                    "id": 3074545856,
+                                    "name": "Chester A. Arthur",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074545544,
+                    "name": "Facial Hair: Beard",
+                    "children": [
+                        {
+                            "id": 3074545520,
+                            "name": "Ulysses S. Grant",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3074545400,
+            "name": "Drinking Habits: Rarely",
+            "children": [
+                {
+                    "id": 3074546096,
+                    "name": "Weight: Obese",
+                    "children": [
+                        {
+                            "id": 3074546576,
+                            "name": "Facial Hair: Clean-shaven",
+                            "children": [
+                                {
+                                    "id": 3074546552,
+                                    "name": "William McKinley",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074546624,
+                            "name": "Facial Hair: Moustache",
+                            "children": [
+                                {
+                                    "id": 3074546480,
+                                    "name": "Theodore Roosevelt",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074546144,
+                    "name": "Weight: Average",
+                    "children": [
+                        {
+                            "id": 3074546192,
+                            "name": "Promiscuity: Philanderer",
+                            "children": [
+                                {
+                                    "id": 3074546312,
+                                    "name": "Musicality: Musician",
+                                    "children": [
+                                        {
+                                            "id": 3074546168,
+                                            "name": "Woodrow Wilson",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074546264,
+                                    "name": "Musicality: Appreciator",
+                                    "children": [
+                                        {
+                                            "id": 3074546240,
+                                            "name": "Ronald Reagan",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074546120,
+                            "name": "Promiscuity: Restrained",
+                            "children": [
+                                {
+                                    "id": 3074546456,
+                                    "name": "Facial Hair: Clean-shaven",
+                                    "children": [
+                                        {
+                                            "id": 3074546336,
+                                            "name": "Andrew Johnson",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074545976,
+                                    "name": "Facial Hair: Beard",
+                                    "children": [
+                                        {
+                                            "id": 3074546384,
+                                            "name": "Abraham Lincoln",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3074546432,
+                    "name": "Weight: Overweight",
+                    "children": [
+                        {
+                            "id": 3074546648,
+                            "name": "Musicality: Not Musical",
+                            "children": [
+                                {
+                                    "id": 3074546864,
+                                    "name": "Facial Hair: Sideburns",
+                                    "children": [
+                                        {
+                                            "id": 3074546720,
+                                            "name": "James K. Polk",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 3074546816,
+                                    "name": "Facial Hair: Clean-shaven",
+                                    "children": [
+                                        {
+                                            "id": 3074546792,
+                                            "name": "Gerald Ford",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3074546744,
+                            "name": "Musicality: Appreciator",
+                            "children": [
+                                {
+                                    "id": 3074546696,
+                                    "name": "Herbert Hoover",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

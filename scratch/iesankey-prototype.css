@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.node {
+	fill: #630;
+}
+
+.alive {
+	fill: #063;
+}
+
+.dead {
+	fill: #900;
+}
+
+.link {
+	fill: none;
+	stroke-opacity: .2;
+}
+
+.genlink {
+	stroke: #360;
+}
+
+.conlink {
+	stroke: #C0F;
+}
+
+.node text {
+	font-size: .6em;
+	opacity: .8;
+	fill: #30F;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Premier League Transfers - 2013</title>
+<link rel="stylesheet" href="style.css" />
+<script src="/js/libs/analyticstracking.js"></script>
+<script src="/js/jquery-latest.min.js"></script>
+<script src="/js/d3.v3.min.js"></script>
+<script src="pltransfers.js"></script>
+<script>
+$(function(){
+    jn.vis.plt.start({target:"#vis", table:"#table"}); 
+
+    var diameter = jn.vis.plt.attrs.diameter,
+        width = jn.vis.plt.attrs.width,
+        height = jn.vis.plt.attrs.height,
+        padding = 20,
+        headHeight = jn.vis.plt.attrs.headerSize
+        lineHeight = headHeight>>1,
+        header = headHeight + lineHeight*4;
+
+    $('#overlay').width(width-diameter-padding)
+        .css('left', diameter+padding)
+        .css('top', header+2*padding);
+
+    $('#title').width(width-diameter-padding)
+        .css('top', padding);
+
+    $('#select').css('top', padding*4);
+
+    $('#opt').change(function(){
+        var v = $(this).val();
+        if(v=='money') {
+            jn.vis.plt.draw(true);
+        }else{
+            jn.vis.plt.draw();
+        }
+    });
+});
+</script>
+</head>
+<body>
+<div id="title">
+Premier League Transfers<br/>
+1992-2013
+</div>
+
+<div id="select">
+<label for="opt">
+Link by
+</label>
+<select name="opt" id="opt">
+<option value="money">Money</option>
+<option value="frequency">Count</option>
+</select>
+</div>
+
+<div id="loader">
+    <div><img src="preload.gif"></div>
+    <div>Loading . . .</div>
+</div>
+
+<div id="overlay">
+<h2>About</h2>
+<p>
+This is a visualization of the transfers that have occurred between the teams that have been in the English Premier League since 1992. Of course, only 20 of these are current PL teams.
+</p>
+
+<p>
+You can explore the data by hovering your mouse over the team labels or the links between them.
+</p>
+
+<p>
+You can view the relationships between teams by money or by frequency. The money view will show you how much each club has earned by selling their players. The frequency view will show you a head count of players moving through the league.
+
+<p>
+The chords in this diagram are bi-directional: they represent players departing from and arriving to each team. The chords are colored accoring to dominance of giving talent: the club who has given more players (or received more money for what they've given) will determine the color of the chord in each relationship.
+</p>
+
+<p>
+Most transfers involve teams outside the Premier League. Only transfers involving two PL teams (or former PL teams) are currently accounted for here.
+</p>
+</div>
+
+<div id="vis"></div>
+<div id="table"></div>
+
+<div id="footer">
+<div>
+Data from <a href="http://www.transfermarkt.co.uk/">http://www.transfermarkt.co.uk/</a>
+</div>
+
+<div>
+Made by <a href="http://joenoodles.com/">Joe Nudell</a> in 2013.
+</div>
+</div>
+
+
+</body>
+</html>

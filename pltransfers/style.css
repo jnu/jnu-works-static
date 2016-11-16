@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body {
+    font-family: Lato, sans-serif;
+    line-height: 1.4em;
+}
+
+a {
+    color: #aa3040;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fa3040;
+}
+
+#title {
+    font-size: 20px;
+    position: absolute;
+    z-index: 1;
+}
+
+#loader {
+    position: absolute;
+    text-align: center;
+}
+
+#footer {
+    font-size: 8px;
+
+}
+
+#select {
+    position: absolute;
+}
+
+
+#circle circle {
+  fill: none;
+  pointer-events: all;
+}
+
+.group path {
+  fill-opacity: .5;
+}
+
+path.chord {
+  stroke: #000;
+  stroke-width: .25px;
+}
+
+#circle:hover path.fade {
+  display: none;
+}
+
+#circle:hover path.unlit {
+    stroke: #bbb;
+    fill-opacity: .1;
+}
+
+svg {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+
+#overlay{
+    position: absolute;
+}

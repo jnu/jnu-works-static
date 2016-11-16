@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Bracket Demo</title>
+
+<link rel='stylesheet' href='bracket.css' />
+<link rel='stylesheet' href='//code.jquery.com/ui/1.10.1/themes/blitzer/jquery-ui.min.css' />
+<script type="text/javascript" src="/sandbox/js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/sandbox/js/jquery-ui-latest.min.js"></script>
+<script type="text/javascript" src="/sandbox/js/raphael-min.js"></script>
+<script type="text/javascript" src="bracket.js"></script>
+<script type="text/javascript">
+var jn = jn || {};
+
+$(function() {
+	jn.bracket = new Bracket();
+	
+	var bracket = window.location.hash.substring(1);
+	if(bracket.length<1) bracket = "testbracket";
+	
+	$.ajax({
+		url: '/sandbox/ncaa/'+bracket+".json",
+		dataType: 'json',
+	 	success: function(data) {
+			jn.d = data;
+			jn.bracket.init(data);
+		},
+		error: function(data, msg) {
+			jn.bracket.error("Couldn't display bracket `"+bracket+"`. Status: "+msg+".");
+		}
+	});
+});
+</script>
+
+</head><body></body></html>

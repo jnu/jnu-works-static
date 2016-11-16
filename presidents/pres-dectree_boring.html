@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="../scr/jquery-latest.min.js"></script>
+<script type="text/javascript">
+/* Dual licensed under the MIT and GPL licenses:
+ http://www.opensource.org/licenses/mit-license.php
+ http://www.gnu.org/licenses/gpl.html
+*/
+$('document').ready(function(){
+	var count = 0; 
+	$('#questions').hide(); 
+	$('#answers').hide(); 
+	$('#questions tr:nth-child(2)').attr('id','currow'); 	
+	var q1 = $('#currow td:nth-child(2)').html();
+	var q3 = '<div id="d' + count + '"><p>' + q1 + '</p>' ; 
+	var a1 =  $('#currow td:nth-child(3)').html();
+	var r1 = q3 + a1 +'</div>';
+	$('#showquestion').html(r1);
+	
+	$('li').live('click',function(){
+		$(this).addClass('selected').siblings().removeClass('selected'); 
+		var target = $(this).attr('id');
+		var parid = $(this).parent().parent().attr('id');
+		var parnum = parseInt(parid.slice(1,3)); 
+		count = count + 1;
+		var ps = $('#showquestion div').length; 
+		$('#showquestion div').each(function() { 
+			var divid = $(this).attr('id'); 
+			var divnum = parseInt(divid.slice(1,3));
+			if(divnum > parnum) 
+				$(this).remove()
+			}) 
+		$('td' ).each(function(){
+			var qnum = $(this).text(); 
+			if(qnum == target) {
+				var q = $(this).next('td').html();
+				var q2 = '<div  id="d' + count + ' "><p>' + q + '</p>'; 
+				var a = $(this).next('td').next('td').html();
+				var qs = $('#showquestion').html();
+				var r = qs + q2 + a +'</div>'; 
+				$('#showquestion').html(r);
+				window.scrollBy(0,400); 
+				}
+			})
+		})
+	})
+</script>
+<link rel="stylesheet" type="text/css" href="../style/dt_style.css" />
+</head>
+
+<body>
+
+<div id="showquestion" class="answers"></div><table id="questions"><tr><td>ID</td><td>Questions</td><td>Answers</td></tr><tr><td>160737900</td><td>Faith</td><td><ul><li id="160387392">Catholic</li><li id="160738156">Protestant</li><li id="160739148">Unspecified</li></ul></td></tr><tr><td>160387392</td><td>John F. Kennedy</td><td>John F. Kennedy</td><tr><td>160738156</td><td>Millions of Dollars</td><td><ul><li id="160738508">Many</li><li id="160738028">A Few</li><li id="160738828">Too Many</li><li id="160738892">Zero</li></ul></td></tr><tr><td>160738508</td><td>Age</td><td><ul><li id="160737804">40s</li><li id="160738572">50s</li><li id="160738700">60s</li></ul></td></tr><tr><td>160737804</td><td>Weight</td><td><ul><li id="160388520">Obese</li><li id="160388448">Overweight</li></ul></td></tr><tr><td>160388520</td><td>Grover Cleveland</td><td>Grover Cleveland</td><tr><td>160388448</td><td>Bill Clinton</td><td>Bill Clinton</td><tr><td>160738572</td><td>Occupation</td><td><ul><li id="160388688">Academic</li><li id="160738636">Law</li><li id="160388736">Other</li><li id="160388640">Business</li></ul></td></tr><tr><td>160388688</td><td>Lyndon B. Johnson</td><td>Lyndon B. Johnson</td><tr><td>160738636</td><td>Weight</td><td><ul><li id="160388808">Average</li><li id="160388784">Overweight</li></ul></td></tr><tr><td>160388808</td><td>Martin Van Buren</td><td>Martin Van Buren</td><tr><td>160388784</td><td>James Monroe</td><td>James Monroe</td><tr><td>160388736</td><td>Herbert Hoover</td><td>Herbert Hoover</td><tr><td>160388640</td><td>George W. Bush</td><td>George W. Bush</td><tr><td>160738700</td><td>Occupation</td><td><ul><li id="160388976">Law</li><li id="160389024">Business</li></ul></td></tr><tr><td>160388976</td><td>John Adams</td><td>John Adams</td><tr><td>160389024</td><td>George H. W. Bush</td><td>George H. W. Bush</td><tr><td>160738028</td><td>Age</td><td><ul><li id="160387584">40s</li><li id="160738092">50s</li><li id="160737868">60s</li></ul></td></tr><tr><td>160387584</td><td>James K. Polk</td><td>James K. Polk</td><tr><td>160738092</td><td>Weight</td><td><ul><li id="160387632">Obese</li><li id="160738252">Average</li></ul></td></tr><tr><td>160387632</td><td>William McKinley</td><td>William McKinley</td><tr><td>160738252</td><td>Occupation</td><td><ul><li id="160387656">Law</li><li id="160387704">Other</li><li id="160387752">Business</li></ul></td></tr><tr><td>160387656</td><td>Millard Fillmore</td><td>Millard Fillmore</td><tr><td>160387704</td><td>Jimmy Carter</td><td>Jimmy Carter</td><tr><td>160387752</td><td>Warren G. Harding</td><td>Warren G. Harding</td><tr><td>160737868</td><td>Weight</td><td><ul><li id="160387944">Obese</li><li id="160738380">Average</li><li id="160738444">Overweight</li></ul></td></tr><tr><td>160387944</td><td>Zachary Taylor</td><td>Zachary Taylor</td><tr><td>160738380</td><td>Occupation</td><td><ul><li id="160388064">Military</li><li id="160387992">Other</li></ul></td></tr><tr><td>160388064</td><td>William Henry Harrison</td><td>William Henry Harrison</td><tr><td>160387992</td><td>Ronald Reagan</td><td>Ronald Reagan</td><tr><td>160738444</td><td>Occupation</td><td><ul><li id="160388256">Military</li><li id="160388304">Law</li></ul></td></tr><tr><td>160388256</td><td>Dwight D. Eisenhower</td><td>Dwight D. Eisenhower</td><tr><td>160388304</td><td>Gerald Ford</td><td>Gerald Ford</td><tr><td>160738828</td><td>Age</td><td><ul><li id="160389168">40s</li><li id="160738860">50s</li><li id="160389144">60s</li></ul></td></tr><tr><td>160389168</td><td>Theodore Roosevelt</td><td>Theodore Roosevelt</td><tr><td>160738860</td><td>Weight</td><td><ul><li id="160389216">Underweight</li><li id="160389264">Overweight</li></ul></td></tr><tr><td>160389216</td><td>James Madison</td><td>James Madison</td><tr><td>160389264</td><td>George Washington</td><td>George Washington</td><tr><td>160389144</td><td>Andrew Jackson</td><td>Andrew Jackson</td><tr><td>160738892</td><td>Age</td><td><ul><li id="160738956">40s</li><li id="160738988">50s</li><li id="160739020">60s</li></ul></td></tr><tr><td>160738956</td><td>Occupation</td><td><ul><li id="160389456">Military</li><li id="160389528">Law</li></ul></td></tr><tr><td>160389456</td><td>Ulysses S. Grant</td><td>Ulysses S. Grant</td><tr><td>160389528</td><td>James A. Garfield</td><td>James A. Garfield</td><tr><td>160738988</td><td>Weight</td><td><ul><li id="160739084">Average</li><li id="160389648">Overweight</li></ul></td></tr><tr><td>160739084</td><td>Occupation</td><td><ul><li id="160389744">Academic</li><li id="160389672">Law</li></ul></td></tr><tr><td>160389744</td><td>Woodrow Wilson</td><td>Woodrow Wilson</td><tr><td>160389672</td><td>Calvin Coolidge</td><td>Calvin Coolidge</td><tr><td>160389648</td><td>Chester A. Arthur</td><td>Chester A. Arthur</td><tr><td>160739020</td><td>Occupation</td><td><ul><li id="160389888">Law</li><li id="160389936">Business</li></ul></td></tr><tr><td>160389888</td><td>James Buchanan</td><td>James Buchanan</td><tr><td>160389936</td><td>Harry S. Truman</td><td>Harry S. Truman</td><tr><td>160739148</td><td>Millions of Dollars</td><td><ul><li id="160739180">A Few</li><li id="160390056">Too Many</li><li id="160390272">Zero</li></ul></td></tr><tr><td>160739180</td><td>Age</td><td><ul><li id="160390224">40s</li><li id="160387464">50s</li></ul></td></tr><tr><td>160390224</td><td>Franklin Pierce</td><td>Franklin Pierce</td><tr><td>160387464</td><td>Rutherford B. Hayes</td><td>Rutherford B. Hayes</td><tr><td>160390056</td><td>Thomas Jefferson</td><td>Thomas Jefferson</td><tr><td>160390272</td><td>Abraham Lincoln</td><td>Abraham Lincoln</td></table></div>​
+
+</body>
+</html>

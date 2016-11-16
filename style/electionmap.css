@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+#labelhead {
+	font-weight: bold;
+	letter-spacing: .1em;
+}
+
+#labelsection {
+	font-weight: bold;
+}
+
+#jn-widgetcontainer-1 {
+	position: relative;
+	width: 800px;
+	height: 450px;
+	background-color: #FCFBF5;
+}
+
+#jn-widgetcontainer-1 a{
+	text-decoration: underline;
+}
+
+#jn-widgetcontainer-1 a:hover{
+	text-decoration: none;
+}
+
+#jn-widgetcontainer-1 h3.ui-accordion-header {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#jn-widgetcontainer-1 h3.ui-state-hover {
+	background-color: #ded;
+}
+
+#jn-widgetcontainer-1 h3.ui-accordion-header-active {
+	background-color: #eed;
+}
+
+#map {
+	position: absolute;
+	left: 0;
+}
+
+#right {
+	position: absolute;
+	right: 0;
+	width: 300px;
+}
+
+#loadbuttons {
+	position: relative;
+	height: 370px;
+	width: 270px;
+}
+
+#loadbuttons .ui-accordion-header {
+	font-size: .6em;
+	padding-left: 2em;
+}
+
+.ui-accordion-content {
+	font-size: .8em;
+}
+
+#votes {
+	width: 270px;
+}
+
+#votes .dem{
+	left: 0;
+	position: absolute;
+}
+
+#votes .gop{
+	right: 0;
+	position: absolute;
+}
+
+#colorline {
+	position: relative;
+	width: 100%;
+	height: 8px;
+	background-color: #eee;
+}
+
+#colorline div {
+	height: 8px;
+}
+
+#colorline .dem {
+	background-color: #22e;
+}
+
+#colorline .gop {
+	background-color: #e22;
+}
+
+#numbers {
+	position: relative;
+	height: 2em;
+	width: 100%;
+}
+
+#numbers div {
+	font-size: 2em;
+}
+
+#labels {
+	position: relative;
+	top: -.5em;
+	height: .7em;
+	width: 100%;
+}
+
+#labels div {
+	font-size: .5em;
+}
