@@ -1,15 +1,15 @@
-.PHONY: php-image php-run image run
+.PHONY: image php-image run php-run
 
 php-image:
 	git submodule update --init --recursive
-	make image -C ./php
+	make image -C ./linked/php
 
 image:
 	docker build -t joen/jnuworks:static .
 
 php-run:
 	git submodule update --init --recursive
-	make run -C ./php
+	make run -C ./linked/php
 
 run: image php-run
 	docker kill static; \
