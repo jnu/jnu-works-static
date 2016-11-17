@@ -1,4 +1,4 @@
-.PHONY: php-image image run
+.PHONY: php-image php-run image run
 
 php-image:
 	git submodule update --init --recursive
@@ -7,7 +7,11 @@ php-image:
 image:
 	docker build -t joen/jnuworks:static .
 
-run: image php-image
-	docker stop static
-	docker rm static
+php-run:
+	git submodule update --init --recursive
+	make run -C ./php
+
+run: image php-run
+	docker kill static; \
+	docker rm static; \
 	docker run -d -p 80:80 --link php:php --name static joen/jnuworks:static nginx -g "daemon off;"
