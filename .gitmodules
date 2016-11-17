@@ -1,0 +1,15 @@
+[submodule "linked/php"]
+	path = linked/php
+	url = https://github.com/jnu/jnu-works-php
+[submodule "content/busing"]
+	path = content/busing
+	url = https://github.com/jnu/busing
+[submodule "content/stickto"]
+	path = content/stickto
+	url = https://github.com/jnu/jquery-stickto
+[submodule "content/epl"]
+	path = content/epl
+	url = https://github.com/jnu/eplfantasy
+[submodule "content/deathrow"]
+	path = content/deathrow
+	url = https://github.com/jnu/texecutions
