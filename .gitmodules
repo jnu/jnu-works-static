@@ -1,15 +1,15 @@
 [submodule "busing"]
-	path = busing
+	path = content/busing
 	url = https://github.com/jnu/busing
 [submodule "epl"]
-	path = epl
+	path = content/epl
 	url = https://github.com/jnu/eplfantasy
 [submodule "stickto"]
-	path = stickto
+	path = content/stickto
 	url = https://github.com/jnu/jquery-stickto
 [submodule "deathrow"]
-	path = deathrow
+	path = content/deathrow
 	url = https://github.com/jnu/texecutions
 [submodule "php"]
-	path = php
+	path = linked/php
 	url = https://github.com/jnu/jnu-works-php
