@@ -70,14 +70,14 @@ jn.SynIEChart = function() {
 		init: function (callback) {
 			var that = this;
 			// Add widget HTML, call load_data() to init all the dynamic stuff.
-			var html = '<a name="jnchart"></a><div id="chart"></div><div id="dash"><p id="words"></p></div>';
+			var html = '<a name="jnchart"></a><div id="chart"></div><div id="dash"><h4 style="margin: 0;">Glosses</h4><p id="words"></p></div>';
 			$('#jn-widgetcontainer').html(html);
-			
+
 			this.svg = d3.select("#chart").append("svg")
 										  .style("fill", this.canvasColor)
 										  .attr("width", this.width+this.infoWidth)
 										  .attr("height", this.height);
-			
+
 			return this.load_data(callback);
 		},
 		//
@@ -119,13 +119,13 @@ jn.SynIEChart = function() {
 		//
 		init_graph: function (callback) {
 			var that = this;
-		
+
 			// Add node groups to SVG
 			this.circle = this.svg.selectAll("g."+this.coreClass).data(this.nodes);
 			this.circle.enter().append("svg:g")
 							   .attr("class", this.coreClass);
-							   
-			// arrange labels for core circles	
+
+			// arrange labels for core circles
 			this.labels = [];
 			for(var i=0; i<this.nodes.length; i++) {
 				this.labels.push({anchor: i,
@@ -137,22 +137,22 @@ jn.SynIEChart = function() {
 					   .attr("style", "font-size: .7em; text-anchor: middle;")
 					   .style("fill", this.labelColor)
 					   .text(function (d) { return d.name; });
-					   
-					   
+
+
 			// Add Circles
 			this.circle.insert("svg:circle", ":first-child")
 			           .attr("class", this.coreClass)
-					   .attr("r", this.radius);		   
-					
+					   .attr("r", this.radius);
+
 			// Add labels
 			this.circle.append("title")
-					   .text(function(d) { return d.meta.fullname; });   
-		 
-		 
+					   .text(function(d) { return d.meta.fullname; });
+
+
 		 	// Add "Meaning" node
 		 	this.defText = this.svg.selectAll("text."+this.defTextClass).data([this.meaningNode]);
 			this.defText.enter().append("svg:text").attr("class", this.defTextClass).attr("style", "font-size: 2em; text-anchor: middle;");
-		 
+
 			this.start();
 			if(callback) {
 				return callback();
@@ -163,10 +163,10 @@ jn.SynIEChart = function() {
 		//
 		start: function(callback) {
 			var that = this;
-			
+
 			var allNodes = this.nodes;
 			allNodes.push(this.meaningNode);
-			
+
 			this.force = d3.layout.force()
 								  .links(this.edges)
 								  .nodes(allNodes)
@@ -182,7 +182,7 @@ jn.SynIEChart = function() {
 		//
 		changeWord: function(word) {
 			var that = this;
-			
+
 			this.loadNodes(word, function() {
 				that.centers = that.inscribePolygon(that.groups);
 				that.placeGroupLabels();
@@ -204,14 +204,14 @@ jn.SynIEChart = function() {
 							.attr("y1", function(d) { return d.source.y; })
 							.attr("x2", function(d) { return d.target.x; })
 							.attr("y2", function(d) { return d.target.y; });
-						
+
 						that.defText
 							.each(function(d) {
 								d.x = that.width/2;
 								d.y = that.height/2;
 							})
 							.attr("transform", function(d) {return "translate("+ d.x +","+ d.y +")"});
-						
+
 						that.circle
 							.each(that.centerGroups(e.alpha, word))
 							.attr("transform", function (d) { return "translate("+ d.x +","+ d.y +")"; });
@@ -264,7 +264,7 @@ jn.SynIEChart = function() {
 							  y: ry - (ry * Math.sin(i * theta)) });
 			}
 			return coords;
-		},		
+		},
 		//
 		//
 		//
@@ -273,9 +273,9 @@ jn.SynIEChart = function() {
 			this.roots = [];
 			for(var i=0; i<this.nodes.length; i++) {
 				this.roots[this.nodes[i].data.group] = {root  : this.nodes[i].data.PIEroot,
-												        group : this.nodes[i].data.group}; 
+												        group : this.nodes[i].data.group};
 			}
-									   	
+
 			this.groupLabels = this.svg.selectAll("text." + this.rootLabelClass).data(this.roots);
 			this.groupLabels.enter().append("svg:text")
 									.attr("style", "font-size: 1em;")
@@ -310,7 +310,7 @@ jn.SynIEChart = function() {
 					.transition()
 					.style("fill", this.canvasColor)
 					.remove();
-			
+
 			// Set text for ALL labels (not just newly entering labels)
 			this.groupLabels.text(function(d) {
 				var rootText = "";
@@ -324,14 +324,14 @@ jn.SynIEChart = function() {
 					rootText += d.root[i].root + " '" + d.root[i].meaning + "'";
 				}
 				return rootText;
-			});				
-			
+			});
+
 			// Set transitions
 			this.groupLabels.transition()
 							.style("fill", function(d) {
 								return that.color(d.group);
 							});
-		},	
+		},
 		//
 		//
 		//
@@ -343,13 +343,13 @@ jn.SynIEChart = function() {
 				that.nodes = json.nodes;
 				that.edges = json.edges;
 				that.groups = json.meta.groups;
-				
+
 				// Add links
 				that.links = that.svg.selectAll("line."+that.linkClass).data(that.edges);
 				that.links.enter().insert("svg:line", ":first-child")
 								  .attr("class", that.linkClass)
 				that.links.exit().remove();
-				
+
 				// Add nodes
 				that.circle = that.svg.selectAll("g").data(that.nodes);
 				that.circle.enter().append("svg:g")
@@ -361,7 +361,7 @@ jn.SynIEChart = function() {
 								   .text(function(d) { return (d.meta)? d.meta.fullname : ""; });
 				that.circle.transition().style("fill", function(d) { return that.color(d.data.group); });
 				that.circle.exit().transition().style("fill", that.canvasColor).remove();
-				
+
 				// Start
 				that.start();
 				// add mouse events to circle
@@ -370,7 +370,7 @@ jn.SynIEChart = function() {
 						// Show middle text
 						that.defText.text(function (e) { return d.data.sign; });
 						that.defText.style("fill", function (e) { return that.color(d.data.group); });
-						
+
 						// Highlight relevant root
 						that.groupLabels.style("fill", function(d1) {
 							if(d1.group==d.data.group) {
@@ -379,7 +379,7 @@ jn.SynIEChart = function() {
 								return that.inactiveColor;
 							}
 						})
-						
+
 						// start simulation so nodes get out of the way of text
 						that.force.resume();
 					})
@@ -392,7 +392,7 @@ jn.SynIEChart = function() {
 					});
 				return callback();
 			}
-			
+
 			// If cache was set to true, get data from there, not server
 			if(this.cache) {
 				// Important that the array is copied and not passed directly. Otherwise

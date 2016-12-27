@@ -14,11 +14,12 @@ line.link {
 }
 
 #dash a {
-	font-size: 2em;
+	font-size: 1em;
 	text-decoration: none;
 	padding-left: 2em;
 	padding-right: 2em;
 	color: #0099FF;
+    display: block;
 }
 
 #dash a:hover {
