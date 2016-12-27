@@ -417,11 +417,12 @@ jn.PIEWidgetI = function () {
 	var chart = new jn.SynIEChart();
 	chart.cache = true;
 	chart.ready(function() {
-		$('#words a').click(function() {
+		$('#words a').click(function(e) {
 			$(this).addClass('active');
 			$(this).siblings('a').removeClass('active');
 			var curword = $(this).text();
 			chart.changeWord(curword);
+            e.preventDefault();
 		});
 		$('#words a:first-child').trigger("click");
 	});
