@@ -27,6 +27,17 @@ $(function() {
 
 <?php include_once("../../analyticstracking.php"); ?>
 
+<style>
+body {
+    background: none !important;
+}
+.container-fluid {
+    border-radius: 0 !important;
+}
+.row-fluid.footer {
+    background: 0 !important;
+}
+</style>
 </head>
 
 <body>
@@ -59,7 +70,7 @@ Thanks for viewing!
 
 <div class="row-fluid footer">
 <div class="span12 site-info" style="text-align: center;">
-By Mr Joe Nudell in 2013.
+By Joe Nudell in 2013.
 </div>
 </div>
 
